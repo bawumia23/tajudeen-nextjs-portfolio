@@ -16,8 +16,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tajudeen | Full Stack Developer",
-  description: "My personal developer portfolio built with Next.js.",
+  metadataBase: new URL(
+    "https://tajudeen-nextjs-portfolio.vercel.app"
+  ),
+
+  title: {
+    default: "Tajudeen Bawumia | Full Stack Developer",
+    template: "%s | Tajudeen Bawumia",
+  },
+
+  description:
+    "Explore the portfolio of Tajudeen Bawumia, an aspiring full stack developer building web applications and backend systems with Python, JavaScript, React, Next.js, TypeScript and MySQL.",
+
+  applicationName: "Tajudeen Bawumia Portfolio",
+
+  authors: [
+    {
+      name: "Adamu Tajudeen Bawumia",
+    },
+  ],
+
+  creator: "Adamu Tajudeen Bawumia",
+
+
+  openGraph: {
+    type: "website",
+    locale: "en_GH",
+    siteName: "Tajudeen Bawumia Portfolio",
+    title: "Tajudeen Bawumia | Full Stack Developer",
+    description:
+      "Discover my software engineering journey, frontend applications, Python backend projects and development experience.",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Tajudeen Bawumia | Full Stack Developer",
+    description:
+      "Explore my software projects, technical skills and journey into full stack development.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -27,13 +68,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}
+      >
         <Navbar />
+
         <div className="flex-1">
           {children}
         </div>
+
         <Footer />
       </body>
     </html>
   );
 }
+
