@@ -37,7 +37,9 @@ export const metadata: Metadata = {
   ],
 
   creator: "Adamu Tajudeen Bawumia",
-
+  verification: {
+    google: "lfk1GSymPe8FhFiAZZL7PqGBRXkx41aMN8rnWDvoeto",
+  },
 
   openGraph: {
     type: "website",
