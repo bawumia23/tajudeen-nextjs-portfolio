@@ -2,45 +2,59 @@
 import Link from "next/link";
 import Image from "next/image";
 
+
 const featuredProjects = [
   {
-    id: "01",
+    id: 1,
     slug: "portfolio",
     name: "Developer Portfolio",
     category: "PERSONAL PROJECT",
     description:
-      "A modern personal portfolio showcasing my development journey, technical skills, and software engineering projects.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "A responsive personal website built with HTML, CSS and JavaScript to showcase my professional background, skills and development journey.",
+    technologies: ["HTML", "CSS", "JavaScript"],
     gradient: "from-blue-600 via-indigo-600 to-purple-700",
     symbol: "</>",
-    previewTitle: "Tajudeen.dev",
-    previewText: "Building digital experiences.",
+    previewTitle: "Developer Portfolio",
+    previewText: "Personal brand & selected work.",
   },
   {
-    id: "02",
+    id: 2,
     slug: "weather-dashboard",
-    name: "Weather Dashboard",
+    name: "WeatherNow",
     category: "WEB APPLICATION",
     description:
-      "A weather application designed to display weather information for different locations.",
+      "A weather application presenting weather forecasts and climate information through a clean, user-friendly interface.",
     technologies: ["JavaScript", "HTML", "CSS", "Weather API"],
     gradient: "from-cyan-500 via-blue-600 to-indigo-700",
     symbol: "☁",
-    previewTitle: "Weather Dashboard",
-    previewText: "Explore weather information.",
+    previewTitle: "WeatherNow",
+    previewText: "Weather information at a glance.",
   },
   {
-    id: "03",
+    id: 3,
     slug: "ecommerce-store",
-    name: "E-commerce Store",
-    category: "WEB APPLICATION",
+    name: "ShopEase",
+    category: "E-COMMERCE APPLICATION",
     description:
       "An online shopping application featuring product listings and shopping cart functionality.",
     technologies: ["JavaScript", "HTML", "CSS", "FakeStore API"],
     gradient: "from-fuchsia-600 via-purple-600 to-pink-600",
     symbol: "🛍",
-    previewTitle: "Online Shopping",
-    previewText: "Discover products and shop.",
+    previewTitle: "ShopEase",
+    previewText: "Explore products and shop.",
+  },
+  {
+    id: 4,
+    slug: "task-manager",
+    name: "TaskFlow",
+    category: "PRODUCTIVITY APPLICATION",
+    description:
+      "A responsive task management application built with HTML, CSS and JavaScript to help users organize daily activities.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    gradient: "from-emerald-500 via-teal-600 to-cyan-700",
+    symbol: "✓",
+    previewTitle: "TaskFlow",
+    previewText: "Organize your day efficiently.",
   },
 ];
 
