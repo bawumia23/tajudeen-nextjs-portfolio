@@ -1,4 +1,4 @@
-
+import type { Metadata } from "next";
 import Link from "next/link";
 
 const experiences = [
@@ -27,6 +27,33 @@ const experiences = [
     skills: ["Python", "JavaScript", "Next.js", "SQL", "Git"],
   },
 ];
+
+
+export const metadata: Metadata = {
+  title: "About Tajudeen Bawumia",
+  description:
+    "Learn about Tajudeen Bawumia's journey from education into software engineering, his technical skills, professional experience and passion for building digital solutions.",
+
+  alternates: {
+    canonical: "/about",
+  },
+
+  openGraph: {
+    title: "About Tajudeen Bawumia | Developer Journey",
+    description:
+      "Discover my background, software engineering journey, skills and professional experience.",
+    images: ["/opengraph-image.png"],
+    url: "/about",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "About Tajudeen Bawumia",
+    description:
+      "Explore my journey into software engineering and my professional development.",
+    images: ["/twitter-image.png"],
+  },
+};
 
 export default function About() {
   return (

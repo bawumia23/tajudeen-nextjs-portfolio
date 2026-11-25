@@ -1,4 +1,4 @@
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -213,6 +213,61 @@ const projects: Project[] = [
       "Collaborative course assignment completed with a peer. I took primary responsibility for most of the implementation work, including substantial backend development, database integration, and deployment tasks.",
   },
 ];
+
+
+export async function generateMetadata({
+  params,
+}: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params;
+
+  const project = projects.find((item) => item.id === id);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const canonicalUrl = `/projects/${project.id}`;
+
+  const pageTitle = `${project.name} | ${project.category}`;
+
+  return {
+    title: pageTitle,
+
+    description: project.description,
+
+    keywords: [
+      "Tajudeen Bawumia",
+      "Software Engineering",
+      "Full Stack Development",
+      ...project.technologies,
+    ],
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    openGraph: {
+      type: "website",
+      title: `${project.name} | Tajudeen Bawumia`,
+      description: project.description,
+      url: canonicalUrl,
+      images: ["/opengraph-image.png"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} | Tajudeen Bawumia`,
+      description: project.description,
+      images: ["/twitter-image.png"],
+    },
+  };
+}
 
 export default async function ProjectDetails({
   params,

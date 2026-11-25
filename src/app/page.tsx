@@ -1,7 +1,33 @@
 
 import Link from "next/link";
+import type { Metadata } from "next";
 import Image from "next/image";
 
+
+export const metadata: Metadata = {
+  title: "Aspiring Full Stack Developer",
+  description:
+    "Meet Tajudeen Bawumia, an aspiring full stack developer from Ghana building modern web applications and backend systems using Python, JavaScript, React, Next.js, TypeScript and MySQL.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Tajudeen Bawumia | Aspiring Full Stack Developer",
+    description:
+      "Explore my software engineering journey, six projects and four live application demonstrations.",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Tajudeen Bawumia | Aspiring Full Stack Developer",
+    description:
+      "Discover my software projects, technical skills and journey into full stack development.",
+  },
+};
 
 const featuredProjects = [
   {

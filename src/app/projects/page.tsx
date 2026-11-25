@@ -1,5 +1,32 @@
-
+import type { Metadata } from "next";
 import Link from "next/link";
+
+
+export const metadata: Metadata = {
+  title: "Software Projects & Portfolio",
+  description:
+    "Explore six software engineering projects by Tajudeen Bawumia, including Python backend systems, MySQL database integration, Next.js applications, JavaScript projects and live web demonstrations.",
+
+  alternates: {
+    canonical: "/projects",
+  },
+
+  openGraph: {
+    title: "Software Projects | Tajudeen Bawumia",
+    description:
+      "Explore my frontend applications, Python backend projects, database engineering work and live demonstrations.",
+    images: ["/opengraph-image.png"],
+    url: "/projects",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Projects | Tajudeen Bawumia",
+    description:
+      "Discover my six software engineering projects and four live application demonstrations.",
+    images: ["/twitter-image.png"],
+  },
+};
 
 type Project = {
   id: string;
