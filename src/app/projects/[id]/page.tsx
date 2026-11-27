@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 type Project = {
@@ -14,8 +15,6 @@ type Project = {
   learning: string[];
   repository: string;
   liveDemo?: string;
-  gradient: string;
-  symbol: string;
   contribution?: string;
 };
 
@@ -30,30 +29,28 @@ const projects: Project[] = [
     id: "portfolio",
     number: "01",
     name: "Developer Portfolio",
-    category: "PERSONAL PROJECT",
+    category: "PERSONAL WEBSITE",
     description:
-      "A personal developer portfolio showcasing my technical skills, professional experience, projects, and software development journey.",
+      "A personal website built with HTML, CSS and JavaScript to showcase my professional background, technical skills and software development journey.",
     overview:
-      "This project presents my professional background and transition into software engineering. It provides visitors with a central place to explore my skills, experience, projects, and contact information.",
+      "This project introduced me to building and organizing a personal web presence. It provides visitors with a central place to explore my professional background, technical skills and selected work.",
     technologies: ["HTML", "CSS", "JavaScript"],
     features: [
-      "Responsive portfolio interface",
-      "Professional introduction and experience sections",
+      "Responsive personal website",
+      "Professional introduction and background",
       "Project showcase",
       "Contact and social media links",
-      "Professional personal branding",
+      "Personal branding",
     ],
     learning: [
-      "Structuring web pages with HTML",
-      "Styling responsive interfaces with CSS",
-      "Adding interactivity with JavaScript",
+      "Structuring pages using HTML",
+      "Creating layouts and styling with CSS",
+      "Adding interactions with JavaScript",
       "Organizing frontend project files",
-      "Publishing projects using GitHub",
+      "Publishing a website using GitHub Pages",
     ],
     repository: "https://github.com/bawumia23/developer-portfolio",
     liveDemo: "https://bawumia23.github.io/developer-portfolio/",
-    gradient: "from-blue-600 via-indigo-600 to-purple-700",
-    symbol: "</>",
   },
   {
     id: "weather-dashboard",
@@ -61,27 +58,25 @@ const projects: Project[] = [
     name: "WeatherNow",
     category: "WEB APPLICATION",
     description:
-      "A real-time weather dashboard designed to present weather forecasts and climate information through a user-friendly interface.",
+      "A weather dashboard that retrieves and presents weather forecasts and climate information through a clean, user-friendly interface.",
     overview:
-      "WeatherNow explores how weather information can be retrieved and presented through a web application. The project demonstrates practical frontend development and working with external weather data.",
-    technologies: ["JavaScript", "HTML", "CSS", "Weather API"],
+      "WeatherNow explores how external weather information can be retrieved and presented through a web application. The project provides practical experience working with dynamic data and user-facing interfaces.",
+    technologies: ["JavaScript", "Weather API", "HTML", "CSS"],
     features: [
       "Weather information dashboard",
-      "Integration with weather data services",
+      "External weather data integration",
       "Climate information presentation",
       "User-friendly interface",
     ],
     learning: [
-      "JavaScript application development",
       "Working with external APIs",
       "Handling asynchronous requests",
       "Displaying dynamic information",
-      "Frontend application development",
+      "JavaScript application development",
+      "Building interactive frontend experiences",
     ],
     repository: "https://github.com/bawumia23/weather-dashboard",
     liveDemo: "https://weathernow-phi-five.vercel.app/",
-    gradient: "from-cyan-500 via-blue-600 to-indigo-700",
-    symbol: "☁",
   },
   {
     id: "ecommerce-store",
@@ -89,15 +84,15 @@ const projects: Project[] = [
     name: "ShopEase",
     category: "E-COMMERCE APPLICATION",
     description:
-      "An online shopping application featuring product listings and shopping cart functionality.",
+      "An online shopping application featuring product listings and shopping cart functionality, built around external product data.",
     overview:
-      "ShopEase explores the foundations of an online shopping experience. It focuses on presenting products and implementing shopping-related functionality using frontend development technologies.",
-    technologies: ["JavaScript", "HTML", "CSS", "FakeStore API"],
+      "ShopEase explores the foundations of an online shopping experience. It focuses on presenting product information and implementing shopping-related interactions using frontend technologies.",
+    technologies: ["JavaScript", "FakeStore API", "HTML", "CSS"],
     features: [
       "Product listing interface",
-      "Product data integration",
+      "External product data integration",
       "Shopping cart functionality",
-      "Online shopping interface",
+      "Online shopping experience",
     ],
     learning: [
       "Working with product APIs",
@@ -108,8 +103,6 @@ const projects: Project[] = [
     ],
     repository: "https://github.com/bawumia23/ecommerce-store",
     liveDemo: "https://bawumia23.github.io/ecommerce-store/",
-    gradient: "from-fuchsia-600 via-purple-600 to-pink-600",
-    symbol: "🛍",
   },
   {
     id: "task-manager",
@@ -117,27 +110,25 @@ const projects: Project[] = [
     name: "TaskFlow",
     category: "PRODUCTIVITY APPLICATION",
     description:
-      "A responsive task management application built with HTML, CSS, and JavaScript to help users organize their daily activities.",
+      "A responsive task management application built with HTML, CSS and JavaScript to help users organize their daily activities.",
     overview:
-      "TaskFlow is a productivity-focused web application that demonstrates how frontend technologies can be used to create a task management experience. Its responsive interface makes the application suitable for different screen sizes.",
+      "TaskFlow is a productivity-focused web application. It demonstrates how frontend technologies can be combined to create a practical interface for organizing everyday tasks.",
     technologies: ["JavaScript", "HTML", "CSS"],
     features: [
       "Responsive task management interface",
-      "Task organization experience",
-      "JavaScript-driven application interactions",
+      "Task organization functionality",
+      "JavaScript-driven interactions",
       "Clean and accessible layout",
     ],
     learning: [
       "Building interactive applications with JavaScript",
       "Working with HTML and CSS",
-      "Creating responsive web interfaces",
+      "Creating responsive interfaces",
       "Structuring application functionality",
       "Using Git and GitHub for source control",
     ],
     repository: "https://github.com/bawumia23/task-manager",
     liveDemo: "https://bawumia23.github.io/task-manager/",
-    gradient: "from-emerald-500 via-teal-600 to-cyan-700",
-    symbol: "✓",
   },
   {
     id: "airbnb-clone",
@@ -145,9 +136,9 @@ const projects: Project[] = [
     name: "AirBnB Clone",
     category: "BACKEND ENGINEERING",
     description:
-      "A Python-based accommodation management application developed as part of software engineering coursework, featuring object-oriented models, a command-line interface, and file storage.",
+      "A Python accommodation management application exploring object-oriented programming, command-line interaction, application models and JSON-based file storage.",
     overview:
-      "This project applies object-oriented programming and modular Python development to build the foundations of an accommodation management application. It uses a command interpreter to interact with application objects and JSON-based file storage to persist data.",
+      "This software engineering course project applies object-oriented programming and modular Python development to build the foundations of an accommodation management application. A command interpreter provides a way to interact with application objects, while JSON-based file storage supports data persistence.",
     technologies: [
       "Python",
       "Object-Oriented Programming",
@@ -156,22 +147,20 @@ const projects: Project[] = [
     ],
     features: [
       "Interactive command-line console",
-      "Object creation, retrieval, updating, and deletion",
-      "Object-oriented data models",
+      "Object creation, retrieval, updating and deletion",
+      "Object-oriented application models",
       "JSON file-based persistence",
-      "Unit testing for application components",
+      "Unit testing of application components",
     ],
     learning: [
       "Object-oriented programming with Python",
       "Designing classes and inheritance",
-      "Working with serialization and file storage",
-      "Building a command interpreter",
+      "Serialization and file storage",
+      "Building command interpreters",
       "Writing and organizing unit tests",
-      "Structuring a multi-module Python application",
+      "Structuring multi-module Python applications",
     ],
     repository: "https://github.com/bawumia23/AirBnB_clone",
-    gradient: "from-orange-500 via-red-600 to-rose-700",
-    symbol: "⌂",
   },
   {
     id: "airbnb-clone-v2",
@@ -179,9 +168,9 @@ const projects: Project[] = [
     name: "AirBnB Clone v2",
     category: "DATABASE & DEPLOYMENT",
     description:
-      "An expanded backend engineering project introducing relational database storage, SQLAlchemy integration, and deployment workflows using Linux administration tools.",
+      "An expanded backend engineering project involving relational database storage, SQLAlchemy integration and deployment workflows using Linux administration tools.",
     overview:
-      "This project extends the AirBnB Clone learning experience into database engineering and deployment. It explores relational data storage with MySQL, ORM-based models using SQLAlchemy, and deployment automation using Fabric and Nginx.",
+      "This project extends the AirBnB Clone learning experience into database engineering and deployment. It explores relational data storage with MySQL, ORM-based application models using SQLAlchemy, and deployment automation using Fabric and Nginx.",
     technologies: [
       "Python",
       "MySQL",
@@ -207,19 +196,15 @@ const projects: Project[] = [
       "Configuring Nginx and Linux environments",
     ],
     repository: "https://github.com/bawumia23/AirBnB_clone_v2",
-    gradient: "from-violet-600 via-purple-700 to-indigo-800",
-    symbol: "DB",
     contribution:
-      "Collaborative course assignment completed with a peer. I took primary responsibility for most of the implementation work, including substantial backend development, database integration, and deployment tasks.",
+      "Collaborative course assignment completed with a peer. I took primary responsibility for much of the implementation, including substantial backend development, database integration and deployment tasks.",
   },
 ];
-
 
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { id } = await params;
-
   const project = projects.find((item) => item.id === id);
 
   if (!project) {
@@ -234,24 +219,18 @@ export async function generateMetadata({
 
   const canonicalUrl = `/projects/${project.id}`;
 
-  const pageTitle = `${project.name} | ${project.category}`;
-
   return {
-    title: pageTitle,
-
+    title: `${project.name} | ${project.category}`,
     description: project.description,
-
     keywords: [
       "Tajudeen Bawumia",
       "Software Engineering",
       "Full Stack Development",
       ...project.technologies,
     ],
-
     alternates: {
       canonical: canonicalUrl,
     },
-
     openGraph: {
       type: "website",
       title: `${project.name} | Tajudeen Bawumia`,
@@ -259,7 +238,6 @@ export async function generateMetadata({
       url: canonicalUrl,
       images: ["/opengraph-image.png"],
     },
-
     twitter: {
       card: "summary_large_image",
       title: `${project.name} | Tajudeen Bawumia`,
@@ -269,11 +247,29 @@ export async function generateMetadata({
   };
 }
 
+function SectionHeading({
+  eyebrow,
+  title,
+}: {
+  eyebrow: string;
+  title: string;
+}) {
+  return (
+    <div className="mb-8">
+      <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+        {eyebrow}
+      </p>
+      <h2 className="text-2xl font-semibold tracking-tight text-[#f0f0eb] sm:text-3xl">
+        {title}
+      </h2>
+    </div>
+  );
+}
+
 export default async function ProjectDetails({
   params,
 }: ProjectPageProps) {
   const { id } = await params;
-
   const project = projects.find((item) => item.id === id);
 
   if (!project) {
@@ -281,116 +277,143 @@ export default async function ProjectDetails({
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
+    <main className="min-h-screen overflow-hidden bg-[#111315] text-[#f0f0eb]">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
-      {/* BACKGROUND EFFECTS */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        {/* BREADCRUMB */}
+        <div className="border-b border-[#303740] py-6">
+          <Link
+            href="/projects"
+            className="text-sm text-[#a5abb4] transition-colors hover:text-white"
+          >
+            ← All projects
+          </Link>
+        </div>
 
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+        {/* PROJECT INTRODUCTION */}
+        <section className="border-b border-[#303740] py-16 md:py-20">
 
-      <div className="relative max-w-5xl mx-auto px-6 py-16">
-
-        {/* BACK TO PROJECTS */}
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-blue-400 hover:text-cyan-300 transition mb-10"
-        >
-          ← Back to Projects
-        </Link>
-
-        {/* PROJECT HERO */}
-        <section className="mb-16">
-
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-5">
-            PROJECT {project.number} / {project.category}
-          </p>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-7">
-            {project.name}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              .
+          <div className="flex flex-wrap items-center gap-4 mb-7">
+            <span className="text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              PROJECT / {project.number}
             </span>
+            <span className="text-xs text-[#77818e]">
+              {project.category}
+            </span>
+          </div>
+
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.04] tracking-[-0.045em] sm:text-6xl md:text-7xl">
+            {project.name}
+            <span className="text-[#91aff5]">.</span>
           </h1>
 
-          <p className="text-slate-300 text-lg md:text-xl leading-relaxed max-w-3xl">
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#a8adb5]">
             {project.description}
           </p>
 
-        </section>
+          <div className="mt-9 flex flex-wrap gap-3">
 
-        {/* PROJECT PREVIEW */}
-        <section
-          className={`relative overflow-hidden h-64 md:h-80 rounded-3xl bg-gradient-to-br ${project.gradient} flex flex-col items-center justify-center shadow-2xl mb-16`}
-        >
-          <span className="text-white text-8xl font-black mb-5 drop-shadow-lg">
-            {project.symbol}
-          </span>
+            {project.liveDemo && (
+              <a
+                href={project.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+              >
+                Open live application ↗
+              </a>
+            )}
 
-          <h2 className="text-white text-3xl md:text-4xl font-bold">
-            {project.name}
-          </h2>
+            <a
+              href={project.repository}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg border border-[#485568] px-6 py-3.5 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
+            >
+              View source code ↗
+            </a>
 
-          <p className="text-white/80 mt-3">
-            Project {project.number}
-          </p>
-
-          <div className="absolute -bottom-24 -right-12 w-72 h-72 border border-white/20 rounded-full" />
-
-          <div className="absolute -bottom-16 -right-6 w-52 h-52 border border-white/20 rounded-full" />
-        </section>
-
-        {/* PROJECT OVERVIEW */}
-        <section className="bg-slate-900 border border-slate-800 rounded-2xl p-8 md:p-10 mb-10">
-
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-4">
-            THE PROJECT
-          </p>
-
-          <h2 className="text-3xl font-bold mb-6">
-            Project Overview
-          </h2>
-
-          <p className="text-slate-300 leading-relaxed text-lg">
-            {project.overview}
-          </p>
+          </div>
 
         </section>
 
-        {/* MY CONTRIBUTION */}
-        {project.contribution && (
-          <section className="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-8 md:p-10 mb-10">
+        {/* PROJECT INFORMATION */}
+        <section className="grid gap-12 border-b border-[#303740] py-16 md:grid-cols-[1.4fr_0.6fr] md:gap-20 md:py-20">
 
-            <p className="text-purple-300 text-sm font-semibold tracking-widest mb-4">
-              COLLABORATIVE PROJECT
+          <div>
+            <SectionHeading
+              eyebrow="01 / OVERVIEW"
+              title="Understanding the project."
+            />
+
+            <p className="max-w-3xl text-base leading-8 text-[#aeb4bd]">
+              {project.overview}
+            </p>
+          </div>
+
+          <aside className="h-fit border-l border-[#3a4552] pl-6">
+
+            <p className="text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              PROJECT DETAILS
             </p>
 
-            <h2 className="text-3xl font-bold mb-5">
-              My Contribution
-            </h2>
+            <div className="mt-6 space-y-5">
 
-            <p className="text-slate-300 leading-relaxed text-lg">
-              {project.contribution}
-            </p>
+              <div>
+                <p className="text-xs text-[#77818e]">Project</p>
+                <p className="mt-1 text-sm font-medium text-[#e8e9e6]">
+                  {project.number} / 06
+                </p>
+              </div>
 
-          </section>
-        )}
+              <div>
+                <p className="text-xs text-[#77818e]">Category</p>
+                <p className="mt-1 text-sm font-medium text-[#e8e9e6]">
+                  {project.category}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-xs text-[#77818e]">Source code</p>
+                <a
+                  href={project.repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-1 inline-block text-sm text-[#a8c1ff] hover:text-white"
+                >
+                  GitHub repository ↗
+                </a>
+              </div>
+
+              <div>
+                <p className="text-xs text-[#77818e]">Demonstration</p>
+                <p className="mt-1 text-sm font-medium text-[#e8e9e6]">
+                  {project.liveDemo ? "Live application available" : "Source code available"}
+                </p>
+              </div>
+
+            </div>
+          </aside>
+
+        </section>
 
         {/* TECHNOLOGY STACK */}
-        <section className="mb-10">
+        <section className="border-b border-[#303740] py-16 md:py-20">
 
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-4">
-            TECHNOLOGY STACK
+          <SectionHeading
+            eyebrow="02 / TECHNOLOGY"
+            title="Tools and technologies."
+          />
+
+          <p className="mb-8 max-w-2xl text-sm leading-7 text-[#a5abb4]">
+            Technologies used in this project and explored through its implementation.
           </p>
 
-          <h2 className="text-3xl font-bold mb-7">
-            Tools & Technologies
-          </h2>
-
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 border-y border-[#303740] py-6">
             {project.technologies.map((technology) => (
               <span
                 key={technology}
-                className="bg-blue-500/10 border border-blue-500/30 text-blue-300 px-5 py-3 rounded-xl font-semibold"
+                className="text-sm font-medium text-[#d4d9e1]"
               >
                 {technology}
               </span>
@@ -399,117 +422,149 @@ export default async function ProjectDetails({
 
         </section>
 
-        {/* KEY FEATURES */}
-        <section className="bg-slate-900 border border-slate-800 rounded-2xl p-8 md:p-10 mb-10">
+        {/* PROJECT FEATURES */}
+        <section className="border-b border-[#303740] py-16 md:py-20">
 
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-4">
-            WHAT IT OFFERS
-          </p>
+          <SectionHeading
+            eyebrow="03 / IMPLEMENTATION"
+            title="Project capabilities."
+          />
 
-          <h2 className="text-3xl font-bold mb-8">
-            Key Features
-          </h2>
+          <div className="grid gap-x-12 md:grid-cols-2">
 
-          <div className="grid md:grid-cols-2 gap-5">
-            {project.features.map((feature) => (
+            {project.features.map((feature, index) => (
               <div
                 key={feature}
-                className="flex items-start gap-4 bg-slate-800/70 border border-slate-700 rounded-xl p-5"
+                className="flex gap-5 border-t border-[#303740] py-6"
               >
-                <span className="text-emerald-400 text-xl">
-                  ✓
+                <span className="text-xs tabular-nums text-[#91aff5]">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="text-slate-300">
+                <p className="text-sm leading-7 text-[#d0d4da]">
                   {feature}
                 </p>
               </div>
             ))}
+
           </div>
 
         </section>
 
-        {/* LEARNING OUTCOMES */}
-        <section className="bg-slate-900 border border-slate-800 rounded-2xl p-8 md:p-10 mb-12">
+        {/* COLLABORATIVE CONTRIBUTION */}
+        {project.contribution && (
+          <section className="border-b border-[#303740] py-16 md:py-20">
 
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-4">
-            MY DEVELOPMENT JOURNEY
+            <SectionHeading
+              eyebrow="04 / COLLABORATION"
+              title="My contribution."
+            />
+
+            <div className="max-w-3xl border-l-2 border-[#91aff5] pl-6">
+              <p className="text-base leading-8 text-[#c4cad3]">
+                {project.contribution}
+              </p>
+            </div>
+
+          </section>
+        )}
+
+        {/* LEARNING OUTCOMES */}
+        <section className="border-b border-[#303740] py-16 md:py-20">
+
+          <SectionHeading
+            eyebrow={project.contribution ? "05 / LEARNING" : "04 / LEARNING"}
+            title="What I learned."
+          />
+
+          <p className="mb-8 max-w-2xl text-sm leading-7 text-[#a5abb4]">
+            Skills and concepts explored through developing and working on this project.
           </p>
 
-          <h2 className="text-3xl font-bold mb-8">
-            What I Learned
-          </h2>
+          <div className="grid gap-x-12 md:grid-cols-2">
 
-          <div className="space-y-5">
             {project.learning.map((item, index) => (
               <div
                 key={item}
-                className="flex items-start gap-4"
+                className="flex gap-5 border-t border-[#303740] py-5"
               >
-                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">
-                  {index + 1}
+                <span className="text-xs tabular-nums text-[#91aff5]">
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="text-slate-300 pt-1">
+                <p className="text-sm leading-7 text-[#d0d4da]">
                   {item}
                 </p>
               </div>
             ))}
+
           </div>
 
         </section>
 
         {/* PROJECT ACTIONS */}
-        <section className="bg-gradient-to-br from-blue-950 via-slate-900 to-purple-950 border border-blue-500/20 rounded-3xl p-8 md:p-12 text-center">
+        <section className="py-16 md:py-20">
 
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-4">
-            EXPLORE THIS PROJECT
-          </p>
+          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
 
-          <h2 className="text-3xl font-bold mb-5">
-            Interested in My Work?
-          </h2>
+            <div className="max-w-2xl">
 
-          <p className="text-slate-300 mb-8 max-w-xl mx-auto">
-            Explore the source code, discover my other projects,
-            or get in touch to discuss opportunities and collaboration.
-          </p>
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+                CONTINUE EXPLORING
+              </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                Interested in this work?
+              </h2>
 
-            {project.liveDemo && (
+              <p className="mt-5 leading-8 text-[#a5abb4]">
+                Explore the source code, try the live application
+                where available, or discover my other software projects.
+              </p>
+
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+
               <a
-                href={project.liveDemo}
+                href={project.repository}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 px-6 py-3 rounded-xl font-semibold transition hover:-translate-y-1"
+                className="rounded-lg border border-[#485568] px-5 py-3 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
               >
-                Live Demo ↗
+                GitHub ↗
               </a>
-            )}
 
-            <a
-              href={project.repository}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-slate-600 hover:border-cyan-400 px-6 py-3 rounded-xl font-semibold transition"
-            >
-              View Source Code ↗
-            </a>
+              {project.liveDemo && (
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg bg-[#91aff5] px-5 py-3 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+                >
+                  Live demo ↗
+                </a>
+              )}
+
+            </div>
+
+          </div>
+
+          <div className="mt-12 flex flex-wrap justify-between gap-5 border-t border-[#303740] pt-6">
 
             <Link
               href="/projects"
-              className="border border-slate-600 hover:border-blue-400 px-6 py-3 rounded-xl font-semibold transition"
+              className="text-sm text-[#a8c1ff] hover:text-white transition-colors"
             >
-              More Projects
+              ← Return to all projects
             </Link>
 
-            <a
-              href="mailto:bawumia91@gmail.com"
-              className="border border-slate-600 hover:border-purple-400 px-6 py-3 rounded-xl font-semibold transition"
+            <Link
+              href="/#contact"
+              className="text-sm text-[#a5abb4] hover:text-white transition-colors"
             >
-              Contact Me
-            </a>
+              Contact me ↗
+            </Link>
 
           </div>
 

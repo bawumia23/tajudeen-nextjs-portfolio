@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 
+import Link from "next/link";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Software Projects & Portfolio",
   description:
     "Explore six software engineering projects by Tajudeen Bawumia, including Python backend systems, MySQL database integration, Next.js applications, JavaScript projects and live web demonstrations.",
-
   alternates: {
     canonical: "/projects",
   },
-
   openGraph: {
     title: "Software Projects | Tajudeen Bawumia",
     description:
@@ -18,7 +16,6 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.png"],
     url: "/projects",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Software Projects | Tajudeen Bawumia",
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 type Project = {
-  id: string;
+  number: string;
   slug: string;
   name: string;
   category: string;
@@ -37,86 +34,88 @@ type Project = {
   technologies: string[];
   repository: string;
   liveDemo?: string;
-  gradient: string;
-  symbol: string;
   contribution?: string;
 };
 
 const frontendProjects: Project[] = [
   {
-    id: "01",
+    number: "01",
     slug: "portfolio",
     name: "Developer Portfolio",
-    category: "PERSONAL PROJECT",
+    category: "PERSONAL WEBSITE",
     description:
-      "A personal developer portfolio showcasing my technical skills, experience, professional background, and software development journey.",
+      "A personal website built with HTML, CSS and JavaScript to showcase my professional background, technical skills and software development journey.",
     technologies: ["HTML", "CSS", "JavaScript"],
-    repository: "https://github.com/bawumia23/developer-portfolio",
-    liveDemo: "https://bawumia23.github.io/developer-portfolio/",
-    gradient: "from-blue-600 via-indigo-600 to-purple-700",
-    symbol: "</>",
+    repository:
+      "https://github.com/bawumia23/developer-portfolio",
+    liveDemo:
+      "https://bawumia23.github.io/developer-portfolio/",
   },
   {
-    id: "02",
+    number: "02",
     slug: "weather-dashboard",
     name: "WeatherNow",
     category: "WEB APPLICATION",
     description:
-      "A real-time weather dashboard designed to present weather forecasts and climate information through a user-friendly interface.",
-    technologies: ["JavaScript", "HTML", "CSS", "Weather API"],
-    repository: "https://github.com/bawumia23/weather-dashboard",
-    liveDemo: "https://weathernow-phi-five.vercel.app/",
-    gradient: "from-cyan-500 via-blue-600 to-indigo-700",
-    symbol: "☁",
+      "A weather dashboard that retrieves and presents weather forecasts and climate information through a clean, user-friendly interface.",
+    technologies: ["JavaScript", "Weather API", "HTML", "CSS"],
+    repository:
+      "https://github.com/bawumia23/weather-dashboard",
+    liveDemo:
+      "https://weathernow-phi-five.vercel.app/",
   },
   {
-    id: "03",
+    number: "03",
     slug: "ecommerce-store",
     name: "ShopEase",
-    category: "E-COMMERCE APPLICATION",
+    category: "E-COMMERCE",
     description:
-      "An online shopping application featuring product listings and shopping cart functionality.",
-    technologies: ["JavaScript", "HTML", "CSS", "FakeStore API"],
-    repository: "https://github.com/bawumia23/ecommerce-store",
-    liveDemo: "https://bawumia23.github.io/ecommerce-store/",
-    gradient: "from-fuchsia-600 via-purple-600 to-pink-600",
-    symbol: "🛍",
+      "An online shopping application featuring product listings and shopping cart functionality, built around external product data.",
+    technologies: ["JavaScript", "FakeStore API", "HTML", "CSS"],
+    repository:
+      "https://github.com/bawumia23/ecommerce-store",
+    liveDemo:
+      "https://bawumia23.github.io/ecommerce-store/",
   },
   {
-    id: "04",
+    number: "04",
     slug: "task-manager",
     name: "TaskFlow",
-    category: "PRODUCTIVITY APPLICATION",
+    category: "PRODUCTIVITY",
     description:
-      "A responsive task management application built with HTML, CSS, and JavaScript to help users organize daily activities.",
+      "A responsive task management application built with HTML, CSS and JavaScript to help users organize their daily activities.",
     technologies: ["JavaScript", "HTML", "CSS"],
-    repository: "https://github.com/bawumia23/task-manager",
-    liveDemo: "https://bawumia23.github.io/task-manager/",
-    gradient: "from-emerald-500 via-teal-600 to-cyan-700",
-    symbol: "✓",
+    repository:
+      "https://github.com/bawumia23/task-manager",
+    liveDemo:
+      "https://bawumia23.github.io/task-manager/",
   },
 ];
 
 const backendProjects: Project[] = [
   {
-    id: "05",
+    number: "05",
     slug: "airbnb-clone",
     name: "AirBnB Clone",
     category: "BACKEND ENGINEERING",
     description:
-      "A Python-based accommodation management application developed as part of software engineering coursework, featuring object-oriented models, a command-line interface, and file storage.",
-    technologies: ["Python", "OOP", "JSON", "Unit Testing"],
-    repository: "https://github.com/bawumia23/AirBnB_clone",
-    gradient: "from-orange-500 via-red-600 to-rose-700",
-    symbol: "⌂",
+      "A Python accommodation management application exploring object-oriented programming, command-line interaction, application models and JSON-based file storage.",
+    technologies: [
+      "Python",
+      "Object-Oriented Programming",
+      "JSON",
+      "Unit Testing",
+    ],
+    repository:
+      "https://github.com/bawumia23/AirBnB_clone",
   },
   {
-    id: "06",
+    number: "06",
     slug: "airbnb-clone-v2",
     name: "AirBnB Clone v2",
     category: "DATABASE & DEPLOYMENT",
     description:
-      "An expanded backend engineering project introducing database storage, SQLAlchemy integration, and deployment workflows using Linux administration tools.",
+      "An expanded backend engineering project involving relational database storage, SQLAlchemy integration and deployment workflows using Linux administration tools.",
     technologies: [
       "Python",
       "MySQL",
@@ -124,123 +123,113 @@ const backendProjects: Project[] = [
       "Fabric",
       "Nginx",
     ],
-    repository: "https://github.com/bawumia23/AirBnB_clone_v2",
-    gradient: "from-violet-600 via-purple-700 to-indigo-800",
-    symbol: "DB",
+    repository:
+      "https://github.com/bawumia23/AirBnB_clone_v2",
     contribution:
-      "Collaborative course assignment completed with a peer. I took primary responsibility for most of the implementation work, including substantial backend development, database integration, and deployment tasks.",
+      "Collaborative course assignment completed with a peer. I took primary responsibility for much of the implementation, including substantial backend development, database integration and deployment tasks.",
   },
 ];
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectEntry({ project }: { project: Project }) {
   return (
-    <article className="group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/60 hover:-translate-y-2 transition duration-300 shadow-xl shadow-black/10">
+    <article className="grid gap-5 border-t border-[#303740] py-8 md:grid-cols-[72px_1fr] md:gap-8">
 
-      {/* PROJECT VISUAL */}
-      <div
-        className={`relative h-56 overflow-hidden bg-gradient-to-br ${project.gradient} p-6`}
-      >
-        <div className="absolute inset-0 bg-black/10" />
-
-        <div className="relative flex justify-between items-center gap-2">
-          <span className="text-white/80 text-xs font-bold tracking-widest">
-            PROJECT {project.id}
-          </span>
-
-          <span className="text-white/90 text-xs border border-white/30 rounded-full px-3 py-1">
-            {project.category}
-          </span>
-        </div>
-
-        <div className="relative flex flex-col items-center justify-center h-40">
-          <span className="text-white text-6xl font-black mb-3 drop-shadow-lg">
-            {project.symbol}
-          </span>
-
-          <h3 className="text-white text-xl font-bold">
-            {project.name}
-          </h3>
-        </div>
-
-        <div className="absolute -bottom-20 -right-12 w-52 h-52 border border-white/20 rounded-full" />
-
-        <div className="absolute -bottom-12 -right-5 w-36 h-36 border border-white/20 rounded-full" />
+      {/* PROJECT NUMBER */}
+      <div>
+        <span className="text-sm font-medium tabular-nums text-[#78818d]">
+          {project.number}
+        </span>
       </div>
 
-      {/* PROJECT INFORMATION */}
-      <div className="p-7">
+      {/* PROJECT DETAILS */}
+      <div>
 
-        <h3 className="text-2xl font-bold mb-4 group-hover:text-blue-400 transition">
+        <div className="mb-3 flex flex-wrap items-center gap-3">
+          <span className="text-xs font-semibold tracking-[0.12em] text-[#9db5e8]">
+            {project.category}
+          </span>
+
+          {project.liveDemo ? (
+            <span className="text-xs text-[#8dba9e]">
+              Live application
+            </span>
+          ) : (
+            <span className="text-xs text-[#a5abb4]">
+              Course project
+            </span>
+          )}
+        </div>
+
+        {/* PROJECT TITLE */}
+        <h3 className="text-2xl font-semibold tracking-tight text-[#f0f0eb] sm:text-3xl">
           {project.name}
         </h3>
 
-        <p className="text-slate-400 text-sm leading-relaxed min-h-24">
+        {/* DESCRIPTION */}
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-[#a5abb4] sm:text-base">
           {project.description}
         </p>
 
-        {/* MY CONTRIBUTION */}
+        {/* CONTRIBUTION */}
         {project.contribution && (
-          <div className="mt-5 bg-purple-500/10 border border-purple-500/20 rounded-xl p-4">
-            <p className="text-purple-300 text-xs font-semibold mb-2">
+          <div className="mt-5 max-w-3xl border-l-2 border-[#91aff5] pl-4">
+            <p className="mb-2 text-xs font-semibold tracking-wide text-[#a8c1ff]">
               MY CONTRIBUTION
             </p>
 
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-sm leading-7 text-[#a5abb4]">
               {project.contribution}
             </p>
           </div>
         )}
 
-        {/* TECHNOLOGY BADGES */}
-        <div className="flex flex-wrap gap-2 mt-6">
+        {/* TECHNOLOGIES */}
+        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
           {project.technologies.map((technology) => (
             <span
               key={technology}
-              className="text-xs text-blue-300 bg-blue-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full"
+              className="text-xs text-[#c0c7d1]"
             >
               {technology}
             </span>
           ))}
         </div>
 
-        {/* PROJECT ACTIONS */}
-        <div className="grid grid-cols-2 gap-3 mt-8 pt-5 border-t border-slate-800">
+        {/* PROJECT LINKS */}
+        <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
 
-          {/* ALL SIX PROJECT DETAIL LINKS */}
           <Link
             href={`/projects/${project.slug}`}
-            className="text-center bg-blue-600 hover:bg-blue-500 text-white px-3 py-3 rounded-lg font-semibold text-sm transition"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#a8c1ff] transition-colors hover:text-white"
           >
-            View Details
+            View case study
+            <span aria-hidden="true">↗</span>
           </Link>
 
-          {/* GITHUB REPOSITORY */}
           <a
             href={project.repository}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-center border border-slate-600 hover:border-cyan-400 text-slate-300 hover:text-cyan-300 px-3 py-3 rounded-lg font-semibold text-sm transition"
+            className="inline-flex items-center gap-2 text-sm text-[#a5abb4] transition-colors hover:text-white"
           >
-            GitHub ↗
+            GitHub source
+            <span aria-hidden="true">↗</span>
           </a>
 
-          {/* LIVE DEMO */}
-          {project.liveDemo ? (
+          {project.liveDemo && (
             <a
               href={project.liveDemo}
               target="_blank"
               rel="noopener noreferrer"
-              className="col-span-2 text-center bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-4 py-3 rounded-lg font-semibold text-sm transition duration-300 hover:-translate-y-1"
+              className="inline-flex items-center gap-2 text-sm text-[#a5abb4] transition-colors hover:text-white"
             >
-              Live Demo ↗
+              Live demonstration
+              <span aria-hidden="true">↗</span>
             </a>
-          ) : (
-            <p className="col-span-2 text-center text-slate-500 text-xs py-2">
-              Source code available on GitHub
-            </p>
           )}
 
         </div>
+
       </div>
     </article>
   );
@@ -248,72 +237,71 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function Projects() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
+    <main className="min-h-screen overflow-hidden bg-[#111315] text-[#f0f0eb]">
 
-      {/* BACKGROUND EFFECTS */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+        {/* PAGE INTRODUCTION */}
+        <section className="border-b border-[#303740] py-20 md:py-24">
 
-      <div className="relative max-w-6xl mx-auto px-6 py-16">
-
-        {/* HERO SECTION */}
-        <section className="text-center py-16">
-
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-4">
-            MY DEVELOPMENT PORTFOLIO
+          <p className="mb-6 text-xs font-semibold tracking-[0.16em] text-[#9db5e8]">
+            PORTFOLIO / SELECTED WORK
           </p>
 
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-            My Projects
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400">
-              .
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-6xl md:text-7xl">
+            Work built through
+            <span className="block text-[#91aff5]">
+              learning and practice.
             </span>
           </h1>
 
-          <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-            Explore my frontend applications, backend systems,
-            database projects, and practical software engineering work.
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#a8adb5]">
+            A collection of frontend applications, backend systems
+            and database engineering projects developed through
+            independent learning and software engineering coursework.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mt-9">
+          <div className="mt-10 flex flex-wrap gap-3">
+
             <a
-              href="#frontend-projects"
-              className="bg-blue-600 hover:bg-blue-500 px-6 py-3 rounded-xl font-semibold transition"
+              href="#frontend"
+              className="rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
             >
-              Explore Projects ↓
+              Explore selected work ↓
             </a>
 
             <Link
               href="/"
-              className="border border-slate-700 hover:border-blue-400 text-slate-300 hover:text-white px-6 py-3 rounded-xl transition"
+              className="rounded-lg border border-[#485568] px-6 py-3.5 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
             >
-              ← Back Home
+              Back to home
             </Link>
+
           </div>
+
         </section>
 
-        {/* PROJECT STATISTICS */}
-        <section className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-20">
+        {/* PROJECT OVERVIEW */}
+        <section className="grid grid-cols-1 border-b border-[#303740] py-8 sm:grid-cols-3">
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
-            <p className="text-4xl font-extrabold text-blue-400">06</p>
-            <p className="text-slate-400 text-sm mt-2">
-              Featured Projects
+          <div className="py-3 sm:py-1 sm:pr-6">
+            <p className="text-3xl font-semibold tabular-nums">06</p>
+            <p className="mt-2 text-sm text-[#a5abb4]">
+              Featured projects
             </p>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
-            <p className="text-4xl font-extrabold text-cyan-400">04</p>
-            <p className="text-slate-400 text-sm mt-2">
-              Live Applications
+          <div className="border-y border-[#303740] py-4 sm:border-x sm:border-y-0 sm:px-8 sm:py-1">
+            <p className="text-3xl font-semibold tabular-nums">04</p>
+            <p className="mt-2 text-sm text-[#a5abb4]">
+              Live applications
             </p>
           </div>
 
-          <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
-            <p className="text-4xl font-extrabold text-purple-400">02</p>
-            <p className="text-slate-400 text-sm mt-2">
-              Backend Projects
+          <div className="py-4 sm:py-1 sm:pl-8">
+            <p className="text-3xl font-semibold tabular-nums">02</p>
+            <p className="mt-2 text-sm text-[#a5abb4]">
+              Backend projects
             </p>
           </div>
 
@@ -321,28 +309,41 @@ export default function Projects() {
 
         {/* FRONTEND PROJECTS */}
         <section
-          id="frontend-projects"
-          className="scroll-mt-24 mb-24"
+          id="frontend"
+          className="scroll-mt-24 border-b border-[#303740] py-20 md:py-24"
         >
 
-          <div className="mb-12">
-            <p className="text-blue-400 text-sm font-semibold tracking-widest mb-3">
-              WEB DEVELOPMENT
-            </p>
+          <div className="mb-12 grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
 
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Frontend & Full-Stack Applications
-              <span className="text-blue-400">.</span>
-            </h2>
+            <div>
 
-            <p className="text-slate-400 mt-4">
-              Interactive applications, user interfaces, and live projects.
-            </p>
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+                SELECTED WORK / 01
+              </p>
+
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                Frontend & web applications.
+              </h2>
+
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#a5abb4] sm:text-base">
+                Practical applications exploring user interfaces,
+                external APIs, frontend logic and everyday digital needs.
+              </p>
+
+            </div>
+
+            <span className="text-sm text-[#7f8996]">
+              04 projects
+            </span>
+
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div>
             {frontendProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectEntry
+                key={project.slug}
+                project={project}
+              />
             ))}
           </div>
 
@@ -350,60 +351,83 @@ export default function Projects() {
 
         {/* BACKEND PROJECTS */}
         <section
-          id="backend-projects"
-          className="scroll-mt-24"
+          id="backend"
+          className="scroll-mt-24 border-b border-[#303740] py-20 md:py-24"
         >
 
-          <div className="mb-12">
-            <p className="text-purple-400 text-sm font-semibold tracking-widest mb-3">
-              BACKEND & SYSTEMS ENGINEERING
-            </p>
+          <div className="mb-12 grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
 
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Backend Engineering Projects
-              <span className="text-purple-400">.</span>
-            </h2>
+            <div>
 
-            <p className="text-slate-400 mt-4 max-w-2xl">
-              Practical course projects exploring Python, object-oriented
-              programming, database engineering, and deployment workflows.
-            </p>
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+                SELECTED WORK / 02
+              </p>
+
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                Backend & systems engineering.
+              </h2>
+
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#a5abb4] sm:text-base">
+                Course projects exploring Python, object-oriented
+                programming, relational databases and deployment workflows.
+              </p>
+
+            </div>
+
+            <span className="text-sm text-[#7f8996]">
+              02 projects
+            </span>
+
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div>
             {backendProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectEntry
+                key={project.slug}
+                project={project}
+              />
             ))}
           </div>
 
         </section>
 
-        {/* CONTACT SECTION */}
-        <section className="bg-gradient-to-br from-blue-950 via-slate-900 to-purple-950 border border-blue-500/20 rounded-3xl p-10 md:p-14 text-center mt-24">
+        {/* CONTACT */}
+        <section className="py-20 md:py-24">
 
-          <p className="text-blue-400 text-sm font-semibold tracking-widest mb-4">
-            LET&apos;S COLLABORATE
-          </p>
+          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-5">
-            Have an Interesting Idea?
-          </h2>
+            <div className="max-w-2xl">
 
-          <p className="text-slate-300 max-w-xl mx-auto mb-8 leading-relaxed">
-            I am open to internships, collaborations, and exciting
-            software development opportunities.
-          </p>
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+                LET&apos;S CONNECT
+              </p>
 
-          <a
-            href="mailto:bawumia91@gmail.com"
-            className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition duration-300 hover:-translate-y-1"
-          >
-            Let&apos;s Work Together →
-          </a>
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                Interested in working together?
+              </h2>
+
+              <p className="mt-5 leading-8 text-[#a5abb4]">
+                I am open to internship opportunities, collaboration
+                and opportunities to grow through meaningful
+                software engineering work.
+              </p>
+
+            </div>
+
+            <a
+              href="mailto:bawumia91@gmail.com"
+              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+            >
+              Contact me
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </div>
 
         </section>
 
       </div>
+
     </main>
   );
 }

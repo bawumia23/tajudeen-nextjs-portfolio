@@ -1,43 +1,15 @@
-import type { Metadata } from "next";
+
+import Image from "next/image";
 import Link from "next/link";
-
-const experiences = [
-  {
-    role: "Physical Education Teacher",
-    organization: "Education Sector",
-    period: "Previous Professional Experience",
-    description:
-      "Developed curriculum plans, assessed student performance, coached sports teams, and promoted teamwork, discipline, and leadership.",
-    skills: ["Teaching", "Leadership", "Communication", "Teamwork"],
-  },
-  {
-    role: "Full Stack Development Intern",
-    organization: "Datheon IT Solutions",
-    period: "2026",
-    description:
-      "Completed practical full-stack development training, working on web development concepts, application functionality, and software engineering practices.",
-    skills: ["JavaScript", "React", "Next.js", "Web Development"],
-  },
-  {
-    role: "Software Development Projects",
-    organization: "Personal Projects",
-    period: "Ongoing",
-    description:
-      "Building practical applications to strengthen my programming, frontend development, backend development, and problem-solving skills.",
-    skills: ["Python", "JavaScript", "Next.js", "SQL", "Git"],
-  },
-];
-
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Tajudeen Bawumia",
   description:
-    "Learn about Tajudeen Bawumia's journey from education into software engineering, his technical skills, professional experience and passion for building digital solutions.",
-
+    "Learn about Tajudeen Bawumia's journey from education into software engineering, professional experience, technical skills and passion for building digital solutions.",
   alternates: {
     canonical: "/about",
   },
-
   openGraph: {
     title: "About Tajudeen Bawumia | Developer Journey",
     description:
@@ -45,7 +17,6 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.png"],
     url: "/about",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "About Tajudeen Bawumia",
@@ -55,152 +26,388 @@ export const metadata: Metadata = {
   },
 };
 
+const technicalSkills = [
+  {
+    category: "Programming languages",
+    skills: ["Python", "JavaScript", "TypeScript"],
+  },
+  {
+    category: "Frontend development",
+    skills: ["React", "Next.js", "HTML", "CSS", "Tailwind CSS"],
+  },
+  {
+    category: "Backend and databases",
+    skills: ["MySQL", "SQLAlchemy", "REST APIs"],
+  },
+  {
+    category: "Development tools",
+    skills: ["Git", "GitHub", "Linux", "Fabric", "Nginx"],
+  },
+];
+
+const principles = [
+  {
+    number: "01",
+    title: "Understand the problem",
+    description:
+      "I believe good software starts with understanding the people, needs and problems behind a project.",
+  },
+  {
+    number: "02",
+    title: "Build with purpose",
+    description:
+      "I focus on practical solutions, readable code and applications that offer genuine value.",
+  },
+  {
+    number: "03",
+    title: "Learn continuously",
+    description:
+      "I approach new technologies with curiosity, experimentation and a willingness to improve.",
+  },
+];
+
 export default function About() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white px-6 py-16">
-      <div className="max-w-4xl mx-auto">
+    <main className="min-h-screen overflow-hidden bg-[#111315] text-[#f0f0eb]">
 
-        {/* PAGE HEADING */}
-        <section className="text-center mb-16">
-          <p className="text-blue-400 font-semibold mb-4">
-            GET TO KNOW ME
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+
+        {/* PAGE INTRODUCTION */}
+        <section className="border-b border-[#303740] py-20 md:py-24">
+
+          <p className="mb-6 text-xs font-semibold tracking-[0.16em] text-[#9db5e8]">
+            ABOUT / MY STORY
           </p>
 
-          <h1 className="text-5xl font-bold mb-6">
-            About <span className="text-blue-400">Me</span>
+          <h1 className="max-w-4xl text-5xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-6xl md:text-7xl">
+            A background in education.
+            <span className="block text-[#91aff5]">
+              A future in engineering.
+            </span>
           </h1>
 
-          <p className="text-slate-400 text-lg">
-            My journey, experience, and passion for technology.
-          </p>
-        </section>
-
-        {/* MY STORY */}
-        <section className="bg-slate-800 p-8 rounded-xl mb-10">
-          <h2 className="text-2xl font-bold text-blue-400 mb-5">
-            My Story
-          </h2>
-
-          <p className="text-slate-300 leading-relaxed mb-4">
-            I am Adamu Tajudeen Bawumia, an educator transitioning
-            into software engineering. My background in education
-            has helped me develop problem-solving, communication,
-            teamwork, and leadership skills.
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#a8adb5]">
+            I&apos;m Tajudeen Bawumia, an aspiring full-stack developer
+            from Ghana. My journey into technology is driven by curiosity,
+            problem-solving and a desire to build useful digital solutions.
           </p>
 
-          <p className="text-slate-300 leading-relaxed">
-            My interest in technology has inspired me to explore
-            software development and build practical applications.
-            I enjoy learning new technologies and turning ideas
-            into useful digital solutions.
-          </p>
-        </section>
-
-        {/* PROFESSIONAL EXPERIENCE */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Professional Experience
-          </h2>
-
-          <div className="space-y-6">
-            {experiences.map((experience) => (
-              <article
-                key={experience.role}
-                className="bg-slate-800 p-8 rounded-xl border border-slate-700"
-              >
-                <p className="text-blue-400 text-sm font-semibold mb-2">
-                  {experience.period}
-                </p>
-
-                <h3 className="text-2xl font-bold mb-2">
-                  {experience.role}
-                </h3>
-
-                <p className="text-slate-400 mb-4">
-                  {experience.organization}
-                </p>
-
-                <p className="text-slate-300 leading-relaxed mb-5">
-                  {experience.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2">
-                  {experience.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="bg-slate-700 text-blue-300 px-3 py-1 rounded-full text-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* TECHNICAL JOURNEY */}
-        <section className="bg-slate-800 p-8 rounded-xl mb-10">
-          <h2 className="text-2xl font-bold text-blue-400 mb-5">
-            My Technical Journey
-          </h2>
-
-          <p className="text-slate-300 leading-relaxed">
-            I am developing my skills in Python, JavaScript,
-            TypeScript, React, Next.js, SQL, MySQL, Git, and
-            GitHub. I am particularly interested in building
-            reliable backend systems and full-stack applications.
-          </p>
-        </section>
-
-        {/* CAREER GOALS */}
-        <section className="bg-slate-800 p-8 rounded-xl mb-10">
-          <h2 className="text-2xl font-bold text-blue-400 mb-5">
-            My Career Goals
-          </h2>
-
-          <p className="text-slate-300 leading-relaxed">
-            My goal is to become a skilled software engineer,
-            contribute to meaningful technology projects,
-            collaborate with other developers, and continuously
-            grow through practical experience.
-          </p>
-        </section>
-
-        {/* CONTACT AND RESUME */}
-        <section className="text-center mt-16">
-          <h2 className="text-2xl font-bold mb-5">
-            Let&apos;s Connect
-          </h2>
-
-          <p className="text-slate-300 mb-8">
-            I am open to learning opportunities, internships,
-            collaborations, and exciting projects.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:bawumia91@gmail.com"
-              className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition"
-            >
-              Contact Me
-            </a>
-
+          <div className="mt-9 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-lg transition"
+              className="rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
             >
-              Explore My Projects
+              Explore my projects →
             </Link>
 
             <a
               href="/resume.pdf"
               download="Tajudeen_Bawumia_CV.pdf"
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition"
+              className="rounded-lg border border-[#485568] px-6 py-3.5 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
             >
-              Download My CV
+              Download my CV ↓
             </a>
           </div>
+
+        </section>
+
+        {/* PERSONAL STORY */}
+        <section className="grid gap-12 border-b border-[#303740] py-20 md:grid-cols-[0.75fr_1.25fr] md:gap-20 md:py-24">
+
+          {/* PROFILE */}
+          <div>
+
+            <div className="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-xl border border-[#343d48] bg-[#1a2028] md:mx-0">
+              <Image
+                src="/profile.jpg"
+                alt="Tajudeen Bawumia"
+                fill
+                priority
+                sizes="(max-width: 768px) 85vw, 380px"
+                className="object-cover"
+              />
+            </div>
+
+            <p className="mt-4 text-xs tracking-wide text-[#8f99a7]">
+              TAJUDEEN BAWUMIA / SOFTWARE DEVELOPMENT
+            </p>
+
+          </div>
+
+          {/* STORY */}
+          <div>
+
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              THE JOURNEY
+            </p>
+
+            <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+              Different experiences. One continuous learning journey.
+            </h2>
+
+            <div className="mt-8 space-y-6 text-base leading-8 text-[#aeb4bd]">
+
+              <p>
+                My professional background is in education, where I
+                developed experience in teaching, physical education,
+                health and sports coaching.
+              </p>
+
+              <p>
+                Working in education taught me the importance of
+                communication, patience, accountability and adapting
+                to different learning needs. These experiences continue
+                to influence how I approach challenges and collaborate
+                with others.
+              </p>
+
+              <p>
+                Over time, my interest in technology developed into
+                a commitment to learning software engineering.
+                I began building my programming knowledge and applying
+                what I learned through practical projects.
+              </p>
+
+              <p>
+                Today, I am developing my capabilities across frontend
+                development, backend engineering and database systems.
+                I enjoy understanding how applications work as complete
+                systems, from the user interface to the data behind it.
+              </p>
+
+              <p className="text-[#e2e4e8]">
+                My goal is to become a well-rounded software engineer
+                who builds dependable, accessible and useful applications.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* PROFESSIONAL EXPERIENCE */}
+        <section className="border-b border-[#303740] py-20 md:py-24">
+
+          <div className="grid gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
+
+            <div>
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+                PROFESSIONAL BACKGROUND
+              </p>
+
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                What education taught me.
+              </h2>
+            </div>
+
+            <div>
+
+              <p className="text-lg leading-8 text-[#d5d8dc]">
+                Working as an educator and sports coach has helped me
+                develop skills that remain relevant as I move into
+                software engineering.
+              </p>
+
+              <div className="mt-8 grid gap-5 sm:grid-cols-2">
+
+                {[
+                  {
+                    title: "Communication",
+                    description:
+                      "Explaining ideas clearly and working with different people.",
+                  },
+                  {
+                    title: "Problem-solving",
+                    description:
+                      "Breaking challenges into manageable steps and finding practical solutions.",
+                  },
+                  {
+                    title: "Collaboration",
+                    description:
+                      "Working with colleagues, learners and teams towards shared goals.",
+                  },
+                  {
+                    title: "Accountability",
+                    description:
+                      "Taking responsibility for tasks, progress and continuous improvement.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="border-t border-[#39414b] pt-4"
+                  >
+                    <h3 className="font-semibold text-[#f0f0eb]">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-7 text-[#9fa7b1]">
+                      {item.description}
+                    </p>
+                  </div>
+                ))}
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        {/* TECHNICAL SKILLS */}
+        <section className="border-b border-[#303740] py-20 md:py-24">
+
+          <div className="mb-12 max-w-2xl">
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              TECHNICAL DEVELOPMENT
+            </p>
+
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Technologies I work with.
+            </h2>
+
+            <p className="mt-5 leading-7 text-[#a5abb4]">
+              Technologies I have been learning and applying through
+              coursework, practical projects and independent development.
+            </p>
+          </div>
+
+          <div>
+            {technicalSkills.map((group, index) => (
+              <div
+                key={group.category}
+                className="grid gap-4 border-t border-[#303740] py-6 sm:grid-cols-[220px_1fr] sm:gap-10"
+              >
+
+                <div className="flex items-start gap-3">
+                  <span className="text-xs tabular-nums text-[#778293]">
+                    0{index + 1}
+                  </span>
+
+                  <h3 className="text-sm font-semibold text-[#e2e4e8]">
+                    {group.category}
+                  </h3>
+                </div>
+
+                <div className="flex flex-wrap gap-x-6 gap-y-3">
+                  {group.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-sm text-[#abb5c3]"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </section>
+
+        {/* DEVELOPMENT PRINCIPLES */}
+        <section className="border-b border-[#303740] py-20 md:py-24">
+
+          <div className="mb-12 max-w-2xl">
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              HOW I APPROACH MY WORK
+            </p>
+
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Principles behind the process.
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-3">
+
+            {principles.map((principle) => (
+              <article
+                key={principle.number}
+                className="border-t border-[#39414b] pt-5"
+              >
+
+                <span className="text-sm tabular-nums text-[#91aff5]">
+                  {principle.number}
+                </span>
+
+                <h3 className="mt-5 text-xl font-semibold text-[#f0f0eb]">
+                  {principle.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-[#a5abb4]">
+                  {principle.description}
+                </p>
+
+              </article>
+            ))}
+
+          </div>
+
+        </section>
+
+        {/* CONTACT */}
+        <section className="py-20 md:py-24">
+
+          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+
+            <div className="max-w-2xl">
+
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+                WHAT&apos;S NEXT
+              </p>
+
+              <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+                Let&apos;s build something meaningful.
+              </h2>
+
+              <p className="mt-5 leading-8 text-[#a5abb4]">
+                I am open to internship opportunities, collaborations
+                and opportunities to grow through meaningful software
+                engineering work.
+              </p>
+
+            </div>
+
+            <a
+              href="mailto:bawumia91@gmail.com"
+              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+            >
+              Contact me ↗
+            </a>
+
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-6 border-t border-[#303740] pt-6 text-sm text-[#a5abb4]">
+
+            <a
+              href="https://github.com/bawumia23"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/adamu-tajudeen-bawumia-557a3876/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              LinkedIn ↗
+            </a>
+
+            <Link
+              href="/projects"
+              className="hover:text-white transition-colors"
+            >
+              Explore projects →
+            </Link>
+
+          </div>
+
         </section>
 
       </div>
