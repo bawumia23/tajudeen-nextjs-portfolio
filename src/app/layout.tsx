@@ -1,8 +1,8 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ThemeProvider from "./components/ThemeProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
 
   creator: "Adamu Tajudeen Bawumia",
+
   verification: {
     google: "lfk1GSymPe8FhFiAZZL7PqGBRXkx41aMN8rnWDvoeto",
   },
@@ -69,19 +70,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}
       >
-        <Navbar />
+        <ThemeProvider>
+          <Navbar />
 
-        <div className="flex-1">
-          {children}
-        </div>
+          <div className="flex-1">
+            {children}
+          </div>
 
-        <Footer />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-

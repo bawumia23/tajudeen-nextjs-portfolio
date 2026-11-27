@@ -256,10 +256,10 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-8">
-      <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+      <p className="mb-3 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
         {eyebrow}
       </p>
-      <h2 className="text-2xl font-semibold tracking-tight text-[#f0f0eb] sm:text-3xl">
+      <h2 className="text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
         {title}
       </h2>
     </div>
@@ -277,37 +277,37 @@ export default async function ProjectDetails({
   }
 
   return (
-    <main className="min-h-screen overflow-hidden bg-[#111315] text-[#f0f0eb]">
+    <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* BREADCRUMB */}
-        <div className="border-b border-[#303740] py-6">
+        <div className="border-b border-[var(--border)] py-6">
           <Link
             href="/projects"
-            className="text-sm text-[#a5abb4] transition-colors hover:text-white"
+            className="text-sm text-[var(--text-muted)] transition-colors hover:text-white"
           >
             ← All projects
           </Link>
         </div>
 
         {/* PROJECT INTRODUCTION */}
-        <section className="border-b border-[#303740] py-16 md:py-20">
+        <section className="border-b border-[var(--border)] py-16 md:py-20">
 
           <div className="flex flex-wrap items-center gap-4 mb-7">
-            <span className="text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <span className="text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               PROJECT / {project.number}
             </span>
-            <span className="text-xs text-[#77818e]">
+            <span className="text-xs text-[var(--text-subtle)]">
               {project.category}
             </span>
           </div>
 
           <h1 className="max-w-4xl text-5xl font-semibold leading-[1.04] tracking-[-0.045em] sm:text-6xl md:text-7xl">
             {project.name}
-            <span className="text-[#91aff5]">.</span>
+            <span className="text-[var(--accent-bg)]">.</span>
           </h1>
 
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-[#a8adb5]">
+          <p className="mt-7 max-w-3xl text-lg leading-8 text-[var(--text-soft)]">
             {project.description}
           </p>
 
@@ -318,7 +318,7 @@ export default async function ProjectDetails({
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+                className="rounded-lg bg-[var(--accent-bg)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
               >
                 Open live application ↗
               </a>
@@ -328,7 +328,7 @@ export default async function ProjectDetails({
               href={project.repository}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg border border-[#485568] px-6 py-3.5 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
+              className="rounded-lg border border-[var(--border-strong)] px-6 py-3.5 text-sm font-medium text-[var(--text-high)] transition-colors hover:border-[var(--accent-bg)] hover:text-white"
             >
               View source code ↗
             </a>
@@ -338,7 +338,7 @@ export default async function ProjectDetails({
         </section>
 
         {/* PROJECT INFORMATION */}
-        <section className="grid gap-12 border-b border-[#303740] py-16 md:grid-cols-[1.4fr_0.6fr] md:gap-20 md:py-20">
+        <section className="grid gap-12 border-b border-[var(--border)] py-16 md:grid-cols-[1.4fr_0.6fr] md:gap-20 md:py-20">
 
           <div>
             <SectionHeading
@@ -346,48 +346,48 @@ export default async function ProjectDetails({
               title="Understanding the project."
             />
 
-            <p className="max-w-3xl text-base leading-8 text-[#aeb4bd]">
+            <p className="max-w-3xl text-base leading-8 text-[var(--text-muted)]">
               {project.overview}
             </p>
           </div>
 
-          <aside className="h-fit border-l border-[#3a4552] pl-6">
+          <aside className="h-fit border-l border-[var(--chip-border)] pl-6">
 
-            <p className="text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <p className="text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               PROJECT DETAILS
             </p>
 
             <div className="mt-6 space-y-5">
 
               <div>
-                <p className="text-xs text-[#77818e]">Project</p>
-                <p className="mt-1 text-sm font-medium text-[#e8e9e6]">
+                <p className="text-xs text-[var(--text-subtle)]">Project</p>
+                <p className="mt-1 text-sm font-medium text-[var(--text-high)]">
                   {project.number} / 06
                 </p>
               </div>
 
               <div>
-                <p className="text-xs text-[#77818e]">Category</p>
-                <p className="mt-1 text-sm font-medium text-[#e8e9e6]">
+                <p className="text-xs text-[var(--text-subtle)]">Category</p>
+                <p className="mt-1 text-sm font-medium text-[var(--text-high)]">
                   {project.category}
                 </p>
               </div>
 
               <div>
-                <p className="text-xs text-[#77818e]">Source code</p>
+                <p className="text-xs text-[var(--text-subtle)]">Source code</p>
                 <a
                   href={project.repository}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 inline-block text-sm text-[#a8c1ff] hover:text-white"
+                  className="mt-1 inline-block text-sm text-[var(--accent)] hover:text-white"
                 >
                   GitHub repository ↗
                 </a>
               </div>
 
               <div>
-                <p className="text-xs text-[#77818e]">Demonstration</p>
-                <p className="mt-1 text-sm font-medium text-[#e8e9e6]">
+                <p className="text-xs text-[var(--text-subtle)]">Demonstration</p>
+                <p className="mt-1 text-sm font-medium text-[var(--text-high)]">
                   {project.liveDemo ? "Live application available" : "Source code available"}
                 </p>
               </div>
@@ -398,22 +398,22 @@ export default async function ProjectDetails({
         </section>
 
         {/* TECHNOLOGY STACK */}
-        <section className="border-b border-[#303740] py-16 md:py-20">
+        <section className="border-b border-[var(--border)] py-16 md:py-20">
 
           <SectionHeading
             eyebrow="02 / TECHNOLOGY"
             title="Tools and technologies."
           />
 
-          <p className="mb-8 max-w-2xl text-sm leading-7 text-[#a5abb4]">
+          <p className="mb-8 max-w-2xl text-sm leading-7 text-[var(--text-muted)]">
             Technologies used in this project and explored through its implementation.
           </p>
 
-          <div className="flex flex-wrap gap-x-8 gap-y-4 border-y border-[#303740] py-6">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 border-y border-[var(--border)] py-6">
             {project.technologies.map((technology) => (
               <span
                 key={technology}
-                className="text-sm font-medium text-[#d4d9e1]"
+                className="text-sm font-medium text-[var(--text-high)]"
               >
                 {technology}
               </span>
@@ -423,7 +423,7 @@ export default async function ProjectDetails({
         </section>
 
         {/* PROJECT FEATURES */}
-        <section className="border-b border-[#303740] py-16 md:py-20">
+        <section className="border-b border-[var(--border)] py-16 md:py-20">
 
           <SectionHeading
             eyebrow="03 / IMPLEMENTATION"
@@ -435,13 +435,13 @@ export default async function ProjectDetails({
             {project.features.map((feature, index) => (
               <div
                 key={feature}
-                className="flex gap-5 border-t border-[#303740] py-6"
+                className="flex gap-5 border-t border-[var(--border)] py-6"
               >
-                <span className="text-xs tabular-nums text-[#91aff5]">
+                <span className="text-xs tabular-nums text-[var(--accent-bg)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="text-sm leading-7 text-[#d0d4da]">
+                <p className="text-sm leading-7 text-[var(--text-high)]">
                   {feature}
                 </p>
               </div>
@@ -453,15 +453,15 @@ export default async function ProjectDetails({
 
         {/* COLLABORATIVE CONTRIBUTION */}
         {project.contribution && (
-          <section className="border-b border-[#303740] py-16 md:py-20">
+          <section className="border-b border-[var(--border)] py-16 md:py-20">
 
             <SectionHeading
               eyebrow="04 / COLLABORATION"
               title="My contribution."
             />
 
-            <div className="max-w-3xl border-l-2 border-[#91aff5] pl-6">
-              <p className="text-base leading-8 text-[#c4cad3]">
+            <div className="max-w-3xl border-l-2 border-[var(--accent-bg)] pl-6">
+              <p className="text-base leading-8 text-[var(--text-high)]">
                 {project.contribution}
               </p>
             </div>
@@ -470,14 +470,14 @@ export default async function ProjectDetails({
         )}
 
         {/* LEARNING OUTCOMES */}
-        <section className="border-b border-[#303740] py-16 md:py-20">
+        <section className="border-b border-[var(--border)] py-16 md:py-20">
 
           <SectionHeading
             eyebrow={project.contribution ? "05 / LEARNING" : "04 / LEARNING"}
             title="What I learned."
           />
 
-          <p className="mb-8 max-w-2xl text-sm leading-7 text-[#a5abb4]">
+          <p className="mb-8 max-w-2xl text-sm leading-7 text-[var(--text-muted)]">
             Skills and concepts explored through developing and working on this project.
           </p>
 
@@ -486,13 +486,13 @@ export default async function ProjectDetails({
             {project.learning.map((item, index) => (
               <div
                 key={item}
-                className="flex gap-5 border-t border-[#303740] py-5"
+                className="flex gap-5 border-t border-[var(--border)] py-5"
               >
-                <span className="text-xs tabular-nums text-[#91aff5]">
+                <span className="text-xs tabular-nums text-[var(--accent-bg)]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="text-sm leading-7 text-[#d0d4da]">
+                <p className="text-sm leading-7 text-[var(--text-high)]">
                   {item}
                 </p>
               </div>
@@ -509,7 +509,7 @@ export default async function ProjectDetails({
 
             <div className="max-w-2xl">
 
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 CONTINUE EXPLORING
               </p>
 
@@ -517,7 +517,7 @@ export default async function ProjectDetails({
                 Interested in this work?
               </h2>
 
-              <p className="mt-5 leading-8 text-[#a5abb4]">
+              <p className="mt-5 leading-8 text-[var(--text-muted)]">
                 Explore the source code, try the live application
                 where available, or discover my other software projects.
               </p>
@@ -530,7 +530,7 @@ export default async function ProjectDetails({
                 href={project.repository}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-[#485568] px-5 py-3 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
+                className="rounded-lg border border-[var(--border-strong)] px-5 py-3 text-sm font-medium text-[var(--text-high)] transition-colors hover:border-[var(--accent-bg)] hover:text-white"
               >
                 GitHub ↗
               </a>
@@ -540,7 +540,7 @@ export default async function ProjectDetails({
                   href={project.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-lg bg-[#91aff5] px-5 py-3 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+                  className="rounded-lg bg-[var(--accent-bg)] px-5 py-3 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
                 >
                   Live demo ↗
                 </a>
@@ -550,18 +550,18 @@ export default async function ProjectDetails({
 
           </div>
 
-          <div className="mt-12 flex flex-wrap justify-between gap-5 border-t border-[#303740] pt-6">
+          <div className="mt-12 flex flex-wrap justify-between gap-5 border-t border-[var(--border)] pt-6">
 
             <Link
               href="/projects"
-              className="text-sm text-[#a8c1ff] hover:text-white transition-colors"
+              className="text-sm text-[var(--accent)] hover:text-white transition-colors"
             >
               ← Return to all projects
             </Link>
 
             <Link
               href="/#contact"
-              className="text-sm text-[#a5abb4] hover:text-white transition-colors"
+              className="text-sm text-[var(--text-muted)] hover:text-white transition-colors"
             >
               Contact me ↗
             </Link>

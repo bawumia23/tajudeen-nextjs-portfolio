@@ -68,25 +68,25 @@ const principles = [
 
 export default function About() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#111315] text-[#f0f0eb]">
+    <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* PAGE INTRODUCTION */}
-        <section className="border-b border-[#303740] py-20 md:py-24">
+        <section className="border-b border-[var(--border)] py-20 md:py-24">
 
-          <p className="mb-6 text-xs font-semibold tracking-[0.16em] text-[#9db5e8]">
+          <p className="mb-6 text-xs font-semibold tracking-[0.16em] text-[var(--accent-soft)]">
             ABOUT / MY STORY
           </p>
 
           <h1 className="max-w-4xl text-5xl font-semibold leading-[1.08] tracking-[-0.045em] sm:text-6xl md:text-7xl">
             A background in education.
-            <span className="block text-[#91aff5]">
+            <span className="block text-[var(--accent-bg)]">
               A future in engineering.
             </span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#a8adb5]">
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--text-soft)]">
             I&apos;m Tajudeen Bawumia, an aspiring full-stack developer
             from Ghana. My journey into technology is driven by curiosity,
             problem-solving and a desire to build useful digital solutions.
@@ -95,7 +95,7 @@ export default function About() {
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
               href="/projects"
-              className="rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+              className="rounded-lg bg-[var(--accent-bg)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
             >
               Explore my projects →
             </Link>
@@ -103,7 +103,7 @@ export default function About() {
             <a
               href="/resume.pdf"
               download="Tajudeen_Bawumia_CV.pdf"
-              className="rounded-lg border border-[#485568] px-6 py-3.5 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
+              className="rounded-lg border border-[var(--border-strong)] px-6 py-3.5 text-sm font-medium text-[var(--text-high)] transition-colors hover:border-[var(--accent-bg)] hover:text-white"
             >
               Download my CV ↓
             </a>
@@ -112,12 +112,12 @@ export default function About() {
         </section>
 
         {/* PERSONAL STORY */}
-        <section className="grid gap-12 border-b border-[#303740] py-20 md:grid-cols-[0.75fr_1.25fr] md:gap-20 md:py-24">
+        <section className="grid gap-12 border-b border-[var(--border)] py-20 md:grid-cols-[0.75fr_1.25fr] md:gap-20 md:py-24">
 
           {/* PROFILE */}
           <div>
 
-            <div className="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-xl border border-[#343d48] bg-[#1a2028] md:mx-0">
+            <div className="relative mx-auto aspect-[4/5] max-w-sm overflow-hidden rounded-xl border border-[var(--chip-border)] bg-[var(--surface-raised)] md:mx-0">
               <Image
                 src="/profile.jpg"
                 alt="Tajudeen Bawumia"
@@ -128,7 +128,7 @@ export default function About() {
               />
             </div>
 
-            <p className="mt-4 text-xs tracking-wide text-[#8f99a7]">
+            <p className="mt-4 text-xs tracking-wide text-[var(--text-subtle)]">
               TAJUDEEN BAWUMIA / SOFTWARE DEVELOPMENT
             </p>
 
@@ -137,7 +137,7 @@ export default function About() {
           {/* STORY */}
           <div>
 
-            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               THE JOURNEY
             </p>
 
@@ -145,7 +145,7 @@ export default function About() {
               Different experiences. One continuous learning journey.
             </h2>
 
-            <div className="mt-8 space-y-6 text-base leading-8 text-[#aeb4bd]">
+            <div className="mt-8 space-y-6 text-base leading-8 text-[var(--text-muted)]">
 
               <p>
                 My professional background is in education, where I
@@ -175,7 +175,7 @@ export default function About() {
                 systems, from the user interface to the data behind it.
               </p>
 
-              <p className="text-[#e2e4e8]">
+              <p className="text-[var(--text-high)]">
                 My goal is to become a well-rounded software engineer
                 who builds dependable, accessible and useful applications.
               </p>
@@ -187,12 +187,12 @@ export default function About() {
         </section>
 
         {/* PROFESSIONAL EXPERIENCE */}
-        <section className="border-b border-[#303740] py-20 md:py-24">
+        <section className="border-b border-[var(--border)] py-20 md:py-24">
 
           <div className="grid gap-8 md:grid-cols-[0.75fr_1.25fr] md:gap-20">
 
             <div>
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 PROFESSIONAL BACKGROUND
               </p>
 
@@ -203,7 +203,7 @@ export default function About() {
 
             <div>
 
-              <p className="text-lg leading-8 text-[#d5d8dc]">
+              <p className="text-lg leading-8 text-[var(--text-high)]">
                 Working as an educator and sports coach has helped me
                 develop skills that remain relevant as I move into
                 software engineering.
@@ -235,13 +235,13 @@ export default function About() {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="border-t border-[#39414b] pt-4"
+                    className="border-t border-[var(--chip-border)] pt-4"
                   >
-                    <h3 className="font-semibold text-[#f0f0eb]">
+                    <h3 className="font-semibold text-[var(--foreground)]">
                       {item.title}
                     </h3>
 
-                    <p className="mt-2 text-sm leading-7 text-[#9fa7b1]">
+                    <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">
                       {item.description}
                     </p>
                   </div>
@@ -256,10 +256,10 @@ export default function About() {
         </section>
 
         {/* TECHNICAL SKILLS */}
-        <section className="border-b border-[#303740] py-20 md:py-24">
+        <section className="border-b border-[var(--border)] py-20 md:py-24">
 
           <div className="mb-12 max-w-2xl">
-            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               TECHNICAL DEVELOPMENT
             </p>
 
@@ -267,7 +267,7 @@ export default function About() {
               Technologies I work with.
             </h2>
 
-            <p className="mt-5 leading-7 text-[#a5abb4]">
+            <p className="mt-5 leading-7 text-[var(--text-muted)]">
               Technologies I have been learning and applying through
               coursework, practical projects and independent development.
             </p>
@@ -277,7 +277,7 @@ export default function About() {
             {technicalSkills.map((group, index) => (
               <div
                 key={group.category}
-                className="grid gap-4 border-t border-[#303740] py-6 sm:grid-cols-[220px_1fr] sm:gap-10"
+                className="grid gap-4 border-t border-[var(--border)] py-6 sm:grid-cols-[220px_1fr] sm:gap-10"
               >
 
                 <div className="flex items-start gap-3">
@@ -285,7 +285,7 @@ export default function About() {
                     0{index + 1}
                   </span>
 
-                  <h3 className="text-sm font-semibold text-[#e2e4e8]">
+                  <h3 className="text-sm font-semibold text-[var(--text-high)]">
                     {group.category}
                   </h3>
                 </div>
@@ -308,10 +308,10 @@ export default function About() {
         </section>
 
         {/* DEVELOPMENT PRINCIPLES */}
-        <section className="border-b border-[#303740] py-20 md:py-24">
+        <section className="border-b border-[var(--border)] py-20 md:py-24">
 
           <div className="mb-12 max-w-2xl">
-            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               HOW I APPROACH MY WORK
             </p>
 
@@ -325,18 +325,18 @@ export default function About() {
             {principles.map((principle) => (
               <article
                 key={principle.number}
-                className="border-t border-[#39414b] pt-5"
+                className="border-t border-[var(--chip-border)] pt-5"
               >
 
-                <span className="text-sm tabular-nums text-[#91aff5]">
+                <span className="text-sm tabular-nums text-[var(--accent-bg)]">
                   {principle.number}
                 </span>
 
-                <h3 className="mt-5 text-xl font-semibold text-[#f0f0eb]">
+                <h3 className="mt-5 text-xl font-semibold text-[var(--foreground)]">
                   {principle.title}
                 </h3>
 
-                <p className="mt-4 text-sm leading-7 text-[#a5abb4]">
+                <p className="mt-4 text-sm leading-7 text-[var(--text-muted)]">
                   {principle.description}
                 </p>
 
@@ -354,7 +354,7 @@ export default function About() {
 
             <div className="max-w-2xl">
 
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 WHAT&apos;S NEXT
               </p>
 
@@ -362,7 +362,7 @@ export default function About() {
                 Let&apos;s build something meaningful.
               </h2>
 
-              <p className="mt-5 leading-8 text-[#a5abb4]">
+              <p className="mt-5 leading-8 text-[var(--text-muted)]">
                 I am open to internship opportunities, collaborations
                 and opportunities to grow through meaningful software
                 engineering work.
@@ -372,14 +372,14 @@ export default function About() {
 
             <a
               href="mailto:bawumia91@gmail.com"
-              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[var(--accent-bg)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
             >
               Contact me ↗
             </a>
 
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-6 border-t border-[#303740] pt-6 text-sm text-[#a5abb4]">
+          <div className="mt-10 flex flex-wrap gap-6 border-t border-[var(--border)] pt-6 text-sm text-[var(--text-muted)]">
 
             <a
               href="https://github.com/bawumia23"

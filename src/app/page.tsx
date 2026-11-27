@@ -118,11 +118,11 @@ const technologyGroups = [
 
 function ProjectEntry({ project }: { project: HomeProject }) {
   return (
-    <article className="group border-t border-[#303740] py-7 md:py-8">
+    <article className="group border-t border-[var(--border)] py-7 md:py-8">
       <div className="grid gap-5 md:grid-cols-[72px_1fr]">
 
         {/* PROJECT NUMBER */}
-        <p className="text-sm font-medium tabular-nums text-[#78818d]">
+        <p className="text-sm font-medium tabular-nums text-[var(--text-subtle)]">
           {project.number}
         </p>
 
@@ -143,13 +143,13 @@ function ProjectEntry({ project }: { project: HomeProject }) {
           {/* PROJECT NAME */}
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-block text-2xl md:text-3xl font-semibold tracking-tight text-[#f0f0eb] hover:text-[#a8c1ff] transition-colors"
+            className="inline-block text-2xl md:text-3xl font-semibold tracking-tight text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
           >
             {project.name}
           </Link>
 
           {/* DESCRIPTION */}
-          <p className="mt-3 max-w-2xl text-sm md:text-base leading-7 text-[#a5abb4]">
+          <p className="mt-3 max-w-2xl text-sm md:text-base leading-7 text-[var(--text-muted)]">
             {project.description}
           </p>
 
@@ -158,7 +158,7 @@ function ProjectEntry({ project }: { project: HomeProject }) {
             {project.technologies.map((technology) => (
               <span
                 key={technology}
-                className="text-xs text-[#b7bec9]"
+                className="text-xs text-[var(--text-muted)]"
               >
                 {technology}
               </span>
@@ -170,7 +170,7 @@ function ProjectEntry({ project }: { project: HomeProject }) {
 
             <Link
               href={`/projects/${project.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#a8c1ff] hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-white transition-colors"
             >
               View case study
               <span aria-hidden="true">↗</span>
@@ -181,7 +181,7 @@ function ProjectEntry({ project }: { project: HomeProject }) {
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-[#a5abb4] hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-white transition-colors"
               >
                 Live demo
                 <span aria-hidden="true">↗</span>
@@ -197,7 +197,7 @@ function ProjectEntry({ project }: { project: HomeProject }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#111315] text-[#f0f0eb]">
+    <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
@@ -207,22 +207,22 @@ export default function Home() {
           {/* INTRODUCTION */}
           <div>
 
-            <p className="mb-7 text-xs font-semibold tracking-[0.16em] text-[#9db5e8]">
+            <p className="mb-7 text-xs font-semibold tracking-[0.16em] text-[var(--accent-soft)]">
               SOFTWARE DEVELOPMENT · GHANA
             </p>
 
             <h1 className="max-w-2xl text-5xl font-semibold leading-[1.03] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
               I build useful software.
-              <span className="mt-3 block text-[#91aff5]">
+              <span className="mt-3 block text-[var(--accent-bg)]">
                 From interface to database.
               </span>
             </h1>
 
-            <p className="mt-8 text-xl font-medium text-[#e0e1df]">
+            <p className="mt-8 text-xl font-medium text-[var(--text-high)]">
               I&apos;m Tajudeen Bawumia, an aspiring full-stack developer.
             </p>
 
-            <p className="mt-4 max-w-xl text-base leading-8 text-[#a8adb5]">
+            <p className="mt-4 max-w-xl text-base leading-8 text-[var(--text-soft)]">
               I am moving from education into software engineering.
               I enjoy turning practical problems into applications,
               exploring how systems work and building my skills across
@@ -234,7 +234,7 @@ export default function Home() {
 
               <Link
                 href="#selected-work"
-                className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#91aff5]"
+                className="inline-flex items-center justify-center gap-3 rounded-lg bg-[var(--accent-bg)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-bg)]"
               >
                 Explore selected work
                 <span aria-hidden="true">↓</span>
@@ -242,7 +242,7 @@ export default function Home() {
 
               <Link
                 href="/about"
-                className="inline-flex items-center justify-center rounded-lg border border-[#454d58] px-6 py-3.5 text-sm font-medium text-[#e2e5eb] transition-colors hover:border-[#91aff5] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#91aff5]"
+                className="inline-flex items-center justify-center rounded-lg border border-[var(--border-strong)] px-6 py-3.5 text-sm font-medium text-[#e2e5eb] transition-colors hover:border-[var(--accent-bg)] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-bg)]"
               >
                 About my journey
               </Link>
@@ -250,7 +250,7 @@ export default function Home() {
             </div>
 
             {/* PROFESSIONAL LINKS */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-[#a5abb4]">
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-[var(--text-muted)]">
 
               <a
                 href="https://github.com/bawumia23"
@@ -284,10 +284,10 @@ export default function Home() {
           {/* PROJECT WORKSPACE PREVIEW */}
           <div className="min-w-0">
 
-            <div className="overflow-hidden rounded-2xl border border-[#353d47] bg-[#181c21] shadow-[0_24px_70px_rgba(0,0,0,0.22)]">
+            <div className="overflow-hidden rounded-2xl border border-[#353d47] bg-[var(--surface)] shadow-[0_24px_70px_rgba(0,0,0,0.22)]">
 
               {/* WINDOW HEADER */}
-              <div className="flex items-center justify-between gap-3 border-b border-[#303741] px-5 py-4">
+              <div className="flex items-center justify-between gap-3 border-b border-[var(--border)] px-5 py-4">
 
                 <div className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#747d89]" />
@@ -295,11 +295,11 @@ export default function Home() {
                   <span className="h-2.5 w-2.5 rounded-full bg-[#747d89]" />
                 </div>
 
-                <span className="text-[10px] font-medium tracking-[0.14em] text-[#929ba8]">
+                <span className="text-[10px] font-medium tracking-[0.14em] text-[var(--text-subtle)]">
                   TAJUDEEN / WORK INDEX
                 </span>
 
-                <span className="text-xs text-[#8d96a2]">
+                <span className="text-xs text-[var(--text-subtle)]">
                   2026
                 </span>
 
@@ -314,23 +314,23 @@ export default function Home() {
                     FEATURED CASE STUDY
                   </p>
 
-                  <span className="text-xs tabular-nums text-[#8c95a0]">
+                  <span className="text-xs tabular-nums text-[var(--text-subtle)]">
                     PROJECT 06 / 06
                   </span>
 
                 </div>
 
-                <div className="mt-6 border-l-2 border-[#91aff5] pl-5">
+                <div className="mt-6 border-l-2 border-[var(--accent-bg)] pl-5">
 
-                  <p className="text-xs text-[#9ca5b1]">
+                  <p className="text-xs text-[var(--text-subtle)]">
                     BACKEND ENGINEERING / DATABASE
                   </p>
 
-                  <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#f1f1ed] sm:text-4xl">
+                  <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--foreground)] sm:text-4xl">
                     AirBnB Clone v2
                   </h2>
 
-                  <p className="mt-4 max-w-md text-sm leading-7 text-[#a9b0ba]">
+                  <p className="mt-4 max-w-md text-sm leading-7 text-[var(--text-muted)]">
                     A collaborative backend project involving database
                     integration, application models and deployment workflows.
                   </p>
@@ -340,7 +340,7 @@ export default function Home() {
                       (technology) => (
                         <span
                           key={technology}
-                          className="rounded-md border border-[#394554] px-2.5 py-1.5 text-xs text-[#c4d0e5]"
+                          className="rounded-md border border-[var(--chip-border)] px-2.5 py-1.5 text-xs text-[var(--text-high)]"
                         >
                           {technology}
                         </span>
@@ -350,7 +350,7 @@ export default function Home() {
 
                   <Link
                     href="/projects/airbnb-clone-v2"
-                    className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#a8c1ff] hover:text-white transition-colors"
+                    className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-white transition-colors"
                   >
                     Explore this project
                     <span aria-hidden="true">↗</span>
@@ -359,7 +359,7 @@ export default function Home() {
                 </div>
 
                 {/* OTHER WORK */}
-                <div className="mt-9 border-t border-[#303741] pt-5">
+                <div className="mt-9 border-t border-[var(--border)] pt-5">
 
                   <p className="mb-2 text-xs font-medium tracking-[0.12em] text-[#8f98a5]">
                     MORE SELECTED WORK
@@ -387,7 +387,7 @@ export default function Home() {
                       href={`/projects/${project.slug}`}
                       className="flex items-center justify-between gap-4 border-b border-[#2d343d] py-4 last:border-b-0 group"
                     >
-                      <span className="text-sm font-medium text-[#e5e6e3] group-hover:text-[#a8c1ff] transition-colors">
+                      <span className="text-sm font-medium text-[var(--text-high)] group-hover:text-[var(--accent)] transition-colors">
                         {project.name}
                       </span>
 
@@ -407,22 +407,22 @@ export default function Home() {
               </div>
 
               {/* PROJECT SUMMARY */}
-              <div className="grid grid-cols-2 border-t border-[#303741] bg-[#14181d]">
+              <div className="grid grid-cols-2 border-t border-[var(--border)] bg-[var(--surface)]">
 
                 <div className="px-5 py-5 sm:px-7">
-                  <p className="text-3xl font-semibold tabular-nums text-[#f1f1ed]">
+                  <p className="text-3xl font-semibold tabular-nums text-[var(--foreground)]">
                     06
                   </p>
-                  <p className="mt-1 text-xs text-[#9ca4af]">
+                  <p className="mt-1 text-xs text-[var(--text-subtle)]">
                     Featured projects
                   </p>
                 </div>
 
-                <div className="border-l border-[#303741] px-5 py-5 sm:px-7">
-                  <p className="text-3xl font-semibold tabular-nums text-[#f1f1ed]">
+                <div className="border-l border-[var(--border)] px-5 py-5 sm:px-7">
+                  <p className="text-3xl font-semibold tabular-nums text-[var(--foreground)]">
                     04
                   </p>
-                  <p className="mt-1 text-xs text-[#9ca4af]">
+                  <p className="mt-1 text-xs text-[var(--text-subtle)]">
                     Live applications
                   </p>
                 </div>
@@ -431,7 +431,7 @@ export default function Home() {
 
             </div>
 
-            <p className="mt-4 text-right text-xs text-[#7f8996]">
+            <p className="mt-4 text-right text-xs text-[var(--text-subtle)]">
               A snapshot of projects and technologies in my portfolio.
             </p>
 
@@ -439,20 +439,20 @@ export default function Home() {
         </section>
 
         {/* PROJECT SUMMARY STRIP */}
-        <section className="grid grid-cols-1 border-y border-[#303740] py-7 sm:grid-cols-3">
+        <section className="grid grid-cols-1 border-y border-[var(--border)] py-7 sm:grid-cols-3">
 
           <div className="py-3 sm:py-1 sm:pr-6">
-            <p className="text-2xl font-semibold text-[#f1f0eb]">06</p>
+            <p className="text-2xl font-semibold text-[var(--foreground)]">06</p>
             <p className="mt-1 text-sm text-[#a2a9b2]">Featured projects</p>
           </div>
 
-          <div className="border-y border-[#303740] py-4 sm:border-x sm:border-y-0 sm:px-8 sm:py-1">
-            <p className="text-2xl font-semibold text-[#f1f0eb]">04</p>
+          <div className="border-y border-[var(--border)] py-4 sm:border-x sm:border-y-0 sm:px-8 sm:py-1">
+            <p className="text-2xl font-semibold text-[var(--foreground)]">04</p>
             <p className="mt-1 text-sm text-[#a2a9b2]">Live demonstrations</p>
           </div>
 
           <div className="py-4 sm:py-1 sm:pl-8">
-            <p className="text-2xl font-semibold text-[#f1f0eb]">02</p>
+            <p className="text-2xl font-semibold text-[var(--foreground)]">02</p>
             <p className="mt-1 text-sm text-[#a2a9b2]">Backend projects</p>
           </div>
 
@@ -462,7 +462,7 @@ export default function Home() {
         <section className="grid gap-8 py-20 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
 
           <div>
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               MY APPROACH
             </p>
 
@@ -473,13 +473,13 @@ export default function Home() {
 
           <div className="max-w-2xl">
 
-            <p className="text-lg leading-8 text-[#d7d9d8]">
+            <p className="text-lg leading-8 text-[var(--text-high)]">
               My background in education shaped how I communicate,
               organize ideas and approach problems. I now bring that
               mindset into software development.
             </p>
 
-            <p className="mt-5 text-base leading-8 text-[#a5abb4]">
+            <p className="mt-5 text-base leading-8 text-[var(--text-muted)]">
               I am developing my skills through practical projects,
               technical coursework and continuous experimentation.
               I enjoy understanding how an application works as a whole,
@@ -488,7 +488,7 @@ export default function Home() {
 
             <Link
               href="/about"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#a8c1ff] hover:text-white transition-colors"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-white transition-colors"
             >
               Read more about my journey
               <span aria-hidden="true">↗</span>
@@ -499,10 +499,10 @@ export default function Home() {
         </section>
 
         {/* TECHNOLOGY TOOLKIT */}
-        <section className="border-t border-[#303740] py-20">
+        <section className="border-t border-[var(--border)] py-20">
 
           <div className="mb-10 max-w-xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               TOOLS & TECHNOLOGIES
             </p>
 
@@ -510,7 +510,7 @@ export default function Home() {
               The tools behind the work.
             </h2>
 
-            <p className="mt-4 leading-7 text-[#a5abb4]">
+            <p className="mt-4 leading-7 text-[var(--text-muted)]">
               Technologies I am learning and applying through projects
               and hands-on development.
             </p>
@@ -520,9 +520,9 @@ export default function Home() {
             {technologyGroups.map((group) => (
               <div
                 key={group.category}
-                className="grid gap-3 border-t border-[#303740] py-5 sm:grid-cols-[180px_1fr] sm:gap-8"
+                className="grid gap-3 border-t border-[var(--border)] py-5 sm:grid-cols-[180px_1fr] sm:gap-8"
               >
-                <p className="text-sm font-medium text-[#9ca6b4]">
+                <p className="text-sm font-medium text-[var(--text-subtle)]">
                   {group.category}
                 </p>
 
@@ -543,12 +543,12 @@ export default function Home() {
         </section>
 
         {/* SELECTED WEB PROJECTS */}
-        <section id="selected-work" className="scroll-mt-20 border-t border-[#303740] py-20">
+        <section id="selected-work" className="scroll-mt-20 border-t border-[var(--border)] py-20">
 
           <div className="mb-12 flex flex-wrap items-end justify-between gap-6">
 
             <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 SELECTED WORK / 01
               </p>
 
@@ -556,7 +556,7 @@ export default function Home() {
                 Web applications.
               </h2>
 
-              <p className="mt-4 max-w-xl leading-7 text-[#a5abb4]">
+              <p className="mt-4 max-w-xl leading-7 text-[var(--text-muted)]">
                 Applications built to explore interfaces, API integration,
                 application logic and everyday user problems.
               </p>
@@ -564,7 +564,7 @@ export default function Home() {
 
             <Link
               href="/projects"
-              className="text-sm font-semibold text-[#a8c1ff] hover:text-white transition-colors"
+              className="text-sm font-semibold text-[var(--accent)] hover:text-white transition-colors"
             >
               View all projects ↗
             </Link>
@@ -580,10 +580,10 @@ export default function Home() {
         </section>
 
         {/* BACKEND PROJECTS */}
-        <section className="border-t border-[#303740] py-20">
+        <section className="border-t border-[var(--border)] py-20">
 
           <div className="mb-12">
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
               SELECTED WORK / 02
             </p>
 
@@ -591,7 +591,7 @@ export default function Home() {
               Backend and systems.
             </h2>
 
-            <p className="mt-4 max-w-2xl leading-7 text-[#a5abb4]">
+            <p className="mt-4 max-w-2xl leading-7 text-[var(--text-muted)]">
               Course projects exploring Python, object-oriented
               programming, relational databases and deployment workflows.
             </p>
@@ -608,14 +608,14 @@ export default function Home() {
         {/* CONTACT SECTION */}
         <section
           id="contact"
-          className="scroll-mt-20 border-t border-[#303740] py-20"
+          className="scroll-mt-20 border-t border-[var(--border)] py-20"
         >
 
           <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
 
             <div className="max-w-2xl">
 
-              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 GET IN TOUCH
               </p>
 
@@ -623,7 +623,7 @@ export default function Home() {
                 Have a problem worth solving?
               </h2>
 
-              <p className="mt-5 max-w-xl leading-7 text-[#a5abb4]">
+              <p className="mt-5 max-w-xl leading-7 text-[var(--text-muted)]">
                 I am interested in internships, collaboration and
                 opportunities to keep learning through meaningful
                 software development work.
@@ -637,7 +637,7 @@ export default function Home() {
 
             <a
               href="mailto:bawumia91@gmail.com"
-              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#91aff5]"
+              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[var(--accent-bg)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-bg)]"
             >
               Start a conversation
               <span aria-hidden="true">↗</span>

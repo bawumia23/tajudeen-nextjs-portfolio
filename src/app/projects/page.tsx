@@ -132,11 +132,11 @@ const backendProjects: Project[] = [
 
 function ProjectEntry({ project }: { project: Project }) {
   return (
-    <article className="grid gap-5 border-t border-[#303740] py-8 md:grid-cols-[72px_1fr] md:gap-8">
+    <article className="grid gap-5 border-t border-[var(--border)] py-8 md:grid-cols-[72px_1fr] md:gap-8">
 
       {/* PROJECT NUMBER */}
       <div>
-        <span className="text-sm font-medium tabular-nums text-[#78818d]">
+        <span className="text-sm font-medium tabular-nums text-[var(--text-subtle)]">
           {project.number}
         </span>
       </div>
@@ -145,39 +145,39 @@ function ProjectEntry({ project }: { project: Project }) {
       <div>
 
         <div className="mb-3 flex flex-wrap items-center gap-3">
-          <span className="text-xs font-semibold tracking-[0.12em] text-[#9db5e8]">
+          <span className="text-xs font-semibold tracking-[0.12em] text-[var(--accent-soft)]">
             {project.category}
           </span>
 
           {project.liveDemo ? (
-            <span className="text-xs text-[#8dba9e]">
+            <span className="text-xs text-[var(--status-success)]">
               Live application
             </span>
           ) : (
-            <span className="text-xs text-[#a5abb4]">
+            <span className="text-xs text-[var(--text-muted)]">
               Course project
             </span>
           )}
         </div>
 
         {/* PROJECT TITLE */}
-        <h3 className="text-2xl font-semibold tracking-tight text-[#f0f0eb] sm:text-3xl">
+        <h3 className="text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
           {project.name}
         </h3>
 
         {/* DESCRIPTION */}
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-[#a5abb4] sm:text-base">
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-muted)] sm:text-base">
           {project.description}
         </p>
 
         {/* CONTRIBUTION */}
         {project.contribution && (
-          <div className="mt-5 max-w-3xl border-l-2 border-[#91aff5] pl-4">
-            <p className="mb-2 text-xs font-semibold tracking-wide text-[#a8c1ff]">
+          <div className="mt-5 max-w-3xl border-l-2 border-[var(--accent-bg)] pl-4">
+            <p className="mb-2 text-xs font-semibold tracking-wide text-[var(--accent)]">
               MY CONTRIBUTION
             </p>
 
-            <p className="text-sm leading-7 text-[#a5abb4]">
+            <p className="text-sm leading-7 text-[var(--text-muted)]">
               {project.contribution}
             </p>
           </div>
@@ -188,7 +188,7 @@ function ProjectEntry({ project }: { project: Project }) {
           {project.technologies.map((technology) => (
             <span
               key={technology}
-              className="text-xs text-[#c0c7d1]"
+              className="text-xs text-[var(--text-high)]"
             >
               {technology}
             </span>
@@ -200,7 +200,7 @@ function ProjectEntry({ project }: { project: Project }) {
 
           <Link
             href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#a8c1ff] transition-colors hover:text-white"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-white"
           >
             View case study
             <span aria-hidden="true">↗</span>
@@ -210,7 +210,7 @@ function ProjectEntry({ project }: { project: Project }) {
             href={project.repository}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[#a5abb4] transition-colors hover:text-white"
+            className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors hover:text-white"
           >
             GitHub source
             <span aria-hidden="true">↗</span>
@@ -221,7 +221,7 @@ function ProjectEntry({ project }: { project: Project }) {
               href={project.liveDemo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-[#a5abb4] transition-colors hover:text-white"
+              className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors hover:text-white"
             >
               Live demonstration
               <span aria-hidden="true">↗</span>
@@ -237,25 +237,25 @@ function ProjectEntry({ project }: { project: Project }) {
 
 export default function Projects() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#111315] text-[#f0f0eb]">
+    <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
 
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
 
         {/* PAGE INTRODUCTION */}
-        <section className="border-b border-[#303740] py-20 md:py-24">
+        <section className="border-b border-[var(--border)] py-20 md:py-24">
 
-          <p className="mb-6 text-xs font-semibold tracking-[0.16em] text-[#9db5e8]">
+          <p className="mb-6 text-xs font-semibold tracking-[0.16em] text-[var(--accent-soft)]">
             PORTFOLIO / SELECTED WORK
           </p>
 
           <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.045em] sm:text-6xl md:text-7xl">
             Work built through
-            <span className="block text-[#91aff5]">
+            <span className="block text-[var(--accent-bg)]">
               learning and practice.
             </span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-[#a8adb5]">
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-[var(--text-soft)]">
             A collection of frontend applications, backend systems
             and database engineering projects developed through
             independent learning and software engineering coursework.
@@ -265,14 +265,14 @@ export default function Projects() {
 
             <a
               href="#frontend"
-              className="rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+              className="rounded-lg bg-[var(--accent-bg)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
             >
               Explore selected work ↓
             </a>
 
             <Link
               href="/"
-              className="rounded-lg border border-[#485568] px-6 py-3.5 text-sm font-medium text-[#e0e4eb] transition-colors hover:border-[#91aff5] hover:text-white"
+              className="rounded-lg border border-[var(--border-strong)] px-6 py-3.5 text-sm font-medium text-[var(--text-high)] transition-colors hover:border-[var(--accent-bg)] hover:text-white"
             >
               Back to home
             </Link>
@@ -282,25 +282,25 @@ export default function Projects() {
         </section>
 
         {/* PROJECT OVERVIEW */}
-        <section className="grid grid-cols-1 border-b border-[#303740] py-8 sm:grid-cols-3">
+        <section className="grid grid-cols-1 border-b border-[var(--border)] py-8 sm:grid-cols-3">
 
           <div className="py-3 sm:py-1 sm:pr-6">
             <p className="text-3xl font-semibold tabular-nums">06</p>
-            <p className="mt-2 text-sm text-[#a5abb4]">
+            <p className="mt-2 text-sm text-[var(--text-muted)]">
               Featured projects
             </p>
           </div>
 
-          <div className="border-y border-[#303740] py-4 sm:border-x sm:border-y-0 sm:px-8 sm:py-1">
+          <div className="border-y border-[var(--border)] py-4 sm:border-x sm:border-y-0 sm:px-8 sm:py-1">
             <p className="text-3xl font-semibold tabular-nums">04</p>
-            <p className="mt-2 text-sm text-[#a5abb4]">
+            <p className="mt-2 text-sm text-[var(--text-muted)]">
               Live applications
             </p>
           </div>
 
           <div className="py-4 sm:py-1 sm:pl-8">
             <p className="text-3xl font-semibold tabular-nums">02</p>
-            <p className="mt-2 text-sm text-[#a5abb4]">
+            <p className="mt-2 text-sm text-[var(--text-muted)]">
               Backend projects
             </p>
           </div>
@@ -310,14 +310,14 @@ export default function Projects() {
         {/* FRONTEND PROJECTS */}
         <section
           id="frontend"
-          className="scroll-mt-24 border-b border-[#303740] py-20 md:py-24"
+          className="scroll-mt-24 border-b border-[var(--border)] py-20 md:py-24"
         >
 
           <div className="mb-12 grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
 
             <div>
 
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 SELECTED WORK / 01
               </p>
 
@@ -325,14 +325,14 @@ export default function Projects() {
                 Frontend & web applications.
               </h2>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#a5abb4] sm:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-muted)] sm:text-base">
                 Practical applications exploring user interfaces,
                 external APIs, frontend logic and everyday digital needs.
               </p>
 
             </div>
 
-            <span className="text-sm text-[#7f8996]">
+            <span className="text-sm text-[var(--text-subtle)]">
               04 projects
             </span>
 
@@ -352,14 +352,14 @@ export default function Projects() {
         {/* BACKEND PROJECTS */}
         <section
           id="backend"
-          className="scroll-mt-24 border-b border-[#303740] py-20 md:py-24"
+          className="scroll-mt-24 border-b border-[var(--border)] py-20 md:py-24"
         >
 
           <div className="mb-12 grid gap-5 md:grid-cols-[1fr_auto] md:items-end">
 
             <div>
 
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 SELECTED WORK / 02
               </p>
 
@@ -367,14 +367,14 @@ export default function Projects() {
                 Backend & systems engineering.
               </h2>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#a5abb4] sm:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-muted)] sm:text-base">
                 Course projects exploring Python, object-oriented
                 programming, relational databases and deployment workflows.
               </p>
 
             </div>
 
-            <span className="text-sm text-[#7f8996]">
+            <span className="text-sm text-[var(--text-subtle)]">
               02 projects
             </span>
 
@@ -398,7 +398,7 @@ export default function Projects() {
 
             <div className="max-w-2xl">
 
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#9db5e8]">
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[var(--accent-soft)]">
                 LET&apos;S CONNECT
               </p>
 
@@ -406,7 +406,7 @@ export default function Projects() {
                 Interested in working together?
               </h2>
 
-              <p className="mt-5 leading-8 text-[#a5abb4]">
+              <p className="mt-5 leading-8 text-[var(--text-muted)]">
                 I am open to internship opportunities, collaboration
                 and opportunities to grow through meaningful
                 software engineering work.
@@ -416,7 +416,7 @@ export default function Projects() {
 
             <a
               href="mailto:bawumia91@gmail.com"
-              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[#91aff5] px-6 py-3.5 text-sm font-semibold text-[#111827] transition-colors hover:bg-[#b1c5fa]"
+              className="inline-flex w-fit items-center gap-3 rounded-lg bg-[var(--accent-bg)] px-6 py-3.5 text-sm font-semibold text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
             >
               Contact me
               <span aria-hidden="true">↗</span>
