@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -30,6 +30,9 @@ type Project = {
   slug: string;
   name: string;
   category: string;
+  screenshot: string;
+  screenshotAlt: string;
+
   description: string;
   technologies: string[];
   repository: string;
@@ -41,6 +44,8 @@ const frontendProjects: Project[] = [
   {
     number: "01",
     slug: "portfolio",
+    screenshot: "/projects/portfolio.jpg",
+    screenshotAlt: "Developer Portfolio website screenshot",
     name: "Developer Portfolio",
     category: "PERSONAL WEBSITE",
     description:
@@ -54,6 +59,8 @@ const frontendProjects: Project[] = [
   {
     number: "02",
     slug: "weather-dashboard",
+    screenshot: "/projects/weather-now.jpg",
+    screenshotAlt: "WeatherNow application screenshot",
     name: "WeatherNow",
     category: "WEB APPLICATION",
     description:
@@ -67,6 +74,8 @@ const frontendProjects: Project[] = [
   {
     number: "03",
     slug: "ecommerce-store",
+    screenshot: "/projects/shopease.jpg",
+    screenshotAlt: "ShopEase e-commerce screenshot",
     name: "ShopEase",
     category: "E-COMMERCE",
     description:
@@ -80,6 +89,8 @@ const frontendProjects: Project[] = [
   {
     number: "04",
     slug: "task-manager",
+    screenshot: "/projects/taskflow.jpg",
+    screenshotAlt: "TaskFlow application screenshot",
     name: "TaskFlow",
     category: "PRODUCTIVITY",
     description:
@@ -96,6 +107,8 @@ const backendProjects: Project[] = [
   {
     number: "05",
     slug: "airbnb-clone",
+    screenshot: "/projects/airbnb-clone.jpg",
+    screenshotAlt: "AirBnB Clone repository screenshot",
     name: "AirBnB Clone",
     category: "BACKEND ENGINEERING",
     description:
@@ -112,6 +125,8 @@ const backendProjects: Project[] = [
   {
     number: "06",
     slug: "airbnb-clone-v2",
+    screenshot: "/projects/airbnb-clone-v2.jpg",
+    screenshotAlt: "AirBnB Clone v2 repository screenshot",
     name: "AirBnB Clone v2",
     category: "DATABASE & DEPLOYMENT",
     description:
@@ -132,103 +147,105 @@ const backendProjects: Project[] = [
 
 function ProjectEntry({ project }: { project: Project }) {
   return (
-    <article className="grid gap-5 border-t border-[var(--border)] py-8 md:grid-cols-[72px_1fr] md:gap-8">
+    <article className="border-t border-[var(--border)] py-9">
+      <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-center">
 
-      {/* PROJECT NUMBER */}
-      <div>
-        <span className="text-sm font-medium tabular-nums text-[var(--text-subtle)]">
-          {project.number}
-        </span>
-      </div>
-
-      {/* PROJECT DETAILS */}
-      <div>
-
-        <div className="mb-3 flex flex-wrap items-center gap-3">
-          <span className="text-xs font-semibold tracking-[0.12em] text-[var(--accent-soft)]">
-            {project.category}
-          </span>
-
-          {project.liveDemo ? (
-            <span className="text-xs text-[var(--status-success)]">
-              Live application
+        {/* PROJECT INFORMATION */}
+        <div>
+          <div className="mb-3 flex flex-wrap items-center gap-3">
+            <span className="text-xs font-semibold tracking-[0.12em] text-[var(--accent-soft)]">
+              {project.category}
             </span>
-          ) : (
-            <span className="text-xs text-[var(--text-muted)]">
-              Course project
-            </span>
-          )}
-        </div>
 
-        {/* PROJECT TITLE */}
-        <h3 className="text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
-          {project.name}
-        </h3>
-
-        {/* DESCRIPTION */}
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-[var(--text-muted)] sm:text-base">
-          {project.description}
-        </p>
-
-        {/* CONTRIBUTION */}
-        {project.contribution && (
-          <div className="mt-5 max-w-3xl border-l-2 border-[var(--accent-bg)] pl-4">
-            <p className="mb-2 text-xs font-semibold tracking-wide text-[var(--accent)]">
-              MY CONTRIBUTION
-            </p>
-
-            <p className="text-sm leading-7 text-[var(--text-muted)]">
-              {project.contribution}
-            </p>
+            {project.liveDemo && (
+              <span className="text-xs text-[var(--status-success)]">
+                Live application
+              </span>
+            )}
           </div>
-        )}
 
-        {/* TECHNOLOGIES */}
-        <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-          {project.technologies.map((technology) => (
-            <span
-              key={technology}
-              className="text-xs text-[var(--text-high)]"
+          <h3 className="text-2xl font-semibold tracking-tight text-[var(--foreground)] sm:text-3xl">
+            {project.name}
+          </h3>
+
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--text-muted)] sm:text-base">
+            {project.description}
+          </p>
+
+          {project.contribution && (
+            <div className="mt-5 border-l-2 border-[var(--accent)] pl-4">
+              <p className="mb-2 text-xs font-semibold text-[var(--accent)]">
+                MY CONTRIBUTION
+              </p>
+              <p className="text-sm leading-7 text-[var(--text-muted)]">
+                {project.contribution}
+              </p>
+            </div>
+          )}
+
+          {/* TECHNOLOGIES */}
+          <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+            {project.technologies.map((technology) => (
+              <span
+                key={technology}
+                className="text-xs text-[var(--text-high)]"
+              >
+                {technology}
+              </span>
+            ))}
+          </div>
+
+          {/* PROJECT LINKS */}
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-4">
+            <Link
+              href={`/projects/${project.slug}`}
+              className="text-sm font-semibold text-[var(--accent)] hover:opacity-75"
             >
-              {technology}
-            </span>
-          ))}
-        </div>
+              View case study ↗
+            </Link>
 
-        {/* PROJECT LINKS */}
-        <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-4">
-
-          <Link
-            href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] transition-colors hover:text-white"
-          >
-            View case study
-            <span aria-hidden="true">↗</span>
-          </Link>
-
-          <a
-            href={project.repository}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors hover:text-white"
-          >
-            GitHub source
-            <span aria-hidden="true">↗</span>
-          </a>
-
-          {project.liveDemo && (
             <a
-              href={project.liveDemo}
+              href={project.repository}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] transition-colors hover:text-white"
+              className="text-sm text-[var(--text-muted)] hover:text-[var(--foreground)]"
             >
-              Live demonstration
-              <span aria-hidden="true">↗</span>
+              GitHub source ↗
             </a>
-          )}
 
+            {project.liveDemo && (
+              <a
+                href={project.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[var(--text-muted)] hover:text-[var(--foreground)]"
+              >
+                Live demonstration ↗
+              </a>
+            )}
+          </div>
         </div>
+
+        {/* PROJECT SCREENSHOT */}
+        <Link
+          href={`/projects/${project.slug}`}
+          aria-label={`View ${project.name} project details`}
+          className="group order-first block lg:order-last"
+        >
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface-raised)]">
+            <Image
+              src={project.screenshot}
+              alt={project.screenshotAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </div>
+
+          <p className="mt-3 text-right text-xs text-[var(--text-subtle)] group-hover:text-[var(--accent)]">
+            View project preview ↗
+          </p>
+        </Link>
 
       </div>
     </article>

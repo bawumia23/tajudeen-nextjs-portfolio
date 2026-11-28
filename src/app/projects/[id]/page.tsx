@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -9,6 +9,9 @@ type Project = {
   name: string;
   category: string;
   description: string;
+  screenshot: string;
+  screenshotAlt: string;
+
   overview: string;
   technologies: string[];
   features: string[];
@@ -30,6 +33,8 @@ const projects: Project[] = [
     number: "01",
     name: "Developer Portfolio",
     category: "PERSONAL WEBSITE",
+    screenshot: "/projects/portfolio.jpg",
+    screenshotAlt: "Developer Portfolio website screenshot",
     description:
       "A personal website built with HTML, CSS and JavaScript to showcase my professional background, technical skills and software development journey.",
     overview:
@@ -57,6 +62,8 @@ const projects: Project[] = [
     number: "02",
     name: "WeatherNow",
     category: "WEB APPLICATION",
+    screenshot: "/projects/weather-now.jpg",
+    screenshotAlt: "WeatherNow application screenshot",
     description:
       "A weather dashboard that retrieves and presents weather forecasts and climate information through a clean, user-friendly interface.",
     overview:
@@ -83,6 +90,8 @@ const projects: Project[] = [
     number: "03",
     name: "ShopEase",
     category: "E-COMMERCE APPLICATION",
+    screenshot: "/projects/shopease.jpg",
+    screenshotAlt: "ShopEase e-commerce application screenshot",
     description:
       "An online shopping application featuring product listings and shopping cart functionality, built around external product data.",
     overview:
@@ -109,6 +118,8 @@ const projects: Project[] = [
     number: "04",
     name: "TaskFlow",
     category: "PRODUCTIVITY APPLICATION",
+    screenshot: "/projects/taskflow.jpg",
+    screenshotAlt: "TaskFlow task management application screenshot",
     description:
       "A responsive task management application built with HTML, CSS and JavaScript to help users organize their daily activities.",
     overview:
@@ -134,6 +145,8 @@ const projects: Project[] = [
     id: "airbnb-clone",
     number: "05",
     name: "AirBnB Clone",
+    screenshot: "/projects/airbnb-clone.jpg",
+    screenshotAlt: "AirBnB Clone project implementation screenshot",
     category: "BACKEND ENGINEERING",
     description:
       "A Python accommodation management application exploring object-oriented programming, command-line interaction, application models and JSON-based file storage.",
@@ -167,6 +180,8 @@ const projects: Project[] = [
     number: "06",
     name: "AirBnB Clone v2",
     category: "DATABASE & DEPLOYMENT",
+    screenshot: "/projects/airbnb-clone-v2.jpg",
+    screenshotAlt: "AirBnB Clone v2 project implementation screenshot",
     description:
       "An expanded backend engineering project involving relational database storage, SQLAlchemy integration and deployment workflows using Linux administration tools.",
     overview:
@@ -396,6 +411,36 @@ export default async function ProjectDetails({
           </aside>
 
         </section>
+
+{/* PROJECT SCREENSHOT */}
+<section className="border-b border-[var(--border)] py-16 md:py-20">
+
+  <SectionHeading
+    eyebrow="02 / PROJECT PREVIEW"
+    title="A closer look."
+  />
+
+  <figure className="group overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+
+    <div className="relative aspect-[16/10] w-full overflow-hidden bg-[var(--surface-raised)]">
+
+      <Image
+        src={project.screenshot}
+        alt={project.screenshotAlt}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1100px"
+        className="object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+      />
+
+    </div>
+
+    <figcaption className="border-t border-[var(--border)] px-5 py-4 text-sm text-[var(--text-muted)]">
+      {project.name} — project screenshot
+    </figcaption>
+
+  </figure>
+
+</section>
 
         {/* TECHNOLOGY STACK */}
         <section className="border-b border-[var(--border)] py-16 md:py-20">
